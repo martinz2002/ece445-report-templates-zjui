@@ -15,6 +15,7 @@ ZJUI毕业设计个人报告（Individual Report）的$\LaTeX$模板。
 第一版模板完成后再找找是否有这两个字体的开源替代品。
 
 ## 制作进度
+- [ ] 与UIUC提供的Final Report模板整合
 - [x] 封面
 - [ ] 目录页格式
 - [ ] 内页skeleton模板和格式
