@@ -1,6 +1,6 @@
 \ProvidesClass{senior-design}[2022-01-01 by Martin Zhong (zhongmartin@outlook.com) Template for ZJU-UIUC Senior Design Inividual Report]
 
-\LoadClass[letterpaper,11pt]{article}
+\LoadClass[letterpaper,11pt]{report}
 
 \RequirePackage{booktabs}
 \RequirePackage{tabularx}
@@ -36,9 +36,11 @@
 %     BoldItalicFont=calibriz.ttf,
 %     BoldFont      =calibrib.ttf,
 %     ItalicFont    =calibrii.ttf]{calibri.ttf}
-\setmainfont{cambria.ttc}
-\setsansfont{calibri.ttf}
+\setmainfont{Calibri}
+\setsansfont{Calibri}
 \setmathfont{Cambria Math}
+
+\newfontfamily\Cambria{Cambria}
 
 \newcommand\reporttitle[1]{\def\RPTTITLE{#1}}
 \newcommand\reportdate[1]{\def\RPTDATE{#1}}
