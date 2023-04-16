@@ -16,11 +16,17 @@ ZJUI毕业设计个人报告（Individual Report）的$\LaTeX$模板。
 
 ## 制作进度
 - [x] 与UIUC提供的Final Report模板整合
+
 - [x] 封面
+
 ~~- [ ] 目录页格式~~
+
 - [ ] 内页skeleton模板和格式
+
 - [x] 参考文献格式（IEEE）
+
 ~~- [ ] 字体跨平台~~ 经查证，无对字体的特殊要求；全局采用Times字体（newtx包）
+
 - [ ] 使用说明
 
 ## 联系我
