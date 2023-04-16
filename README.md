@@ -21,6 +21,7 @@ ZJUI毕业设计个人报告（Individual Report）的$\LaTeX$模板。
 - [ ] 内页skeleton模板和格式
 - [x] 参考文献格式（IEEE）
 ~~- [ ] 字体跨平台~~ 经查证，无对字体的特殊要求；全局采用Times字体（newtx包）
+- [ ] 使用说明
 
 ## 联系我
 Email: zhongmartin@outlook.com
