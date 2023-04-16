@@ -301,3 +301,7 @@ TSWLatexianTemp*
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
 
+# Should not provide any font files
+*.ttf
+*.ttc
+*.otf
