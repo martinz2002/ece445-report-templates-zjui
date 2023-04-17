@@ -27,13 +27,14 @@
 \RequirePackage{anyfontsize}
 \RequirePackage{csquotes}
 \RequirePackage[style=ieee]{biblatex}
+% \RequirePackage{cite}
 \RequirePackage[title, titletoc]{appendix}
 \RequirePackage{newtx}
 \RequirePackage{titlesec}
 \titleformat{\chapter}
   {\normalfont\LARGE\sc\bfseries}
-  {\thechapter}{1em}{}
-\titlespacing{\chapter}{0pt}{0pt}{2pt}
+  {\thechapter}{1.5em}{}
+\titlespacing{\chapter}{0pt}{0pt}{2em}
 
 \titleformat{\section}
   {\normalfont\Large\bfseries}
@@ -47,16 +48,28 @@
   {\normalfont\bfseries}
   {\thesubsubsection}{1em}{}
 
+\linespread{1.15}
 \newcommand\reporttitle[1]{\def\RPTTITLE{#1}}
 \newcommand\reportdate[1]{\def\RPTDATE{#1}}
-\newcommand\authorname[1]{\def\AUTHORNAME{#1}}
+\newcommand\authornames[1]{\def\AUTHORNAME{#1}}
 \newcommand\semester[1]{\def\SEMESTER{#1}}
 \newcommand\sponsor[1]{\def\FACULTYNAME{#1}}
 \newcommand\ta[1]{\def\TANAME{#1}}
 \newcommand\projectnumber[1]{\def\PROJECTNUMBER{#1}}
-\newcommand\members[1]{\def\MEMBERS{#1}}
-\newcommand\student[2]{#1\hspace{1em}\href{mailto:#2}{#2}}
+\newcommand\student[2]{{\bf#1}\hspace{1em}\href{mailto:#2}{#2}}
 \newcommand\teamnumber[1]{\def\TEAMNUMBER{#1}}
+\newcommand{\HRule}{\rule{\linewidth}{0.1mm}} 
+\def\ABSTRACTCONTENT{You did not specify the content of abstract.}
+\def\ACKNOWLEDGEMENTCONTENT{You did not specify the content of acknowledgement.}
+\def\KEYWORDS{Keywords of the project}
+\def\RPTTITLE{Put your title here}
+\def\RPTDATE{Put the date of the report here}
+\def\AUTHORNAME{Your teammembers, or the author of the individual reports}
+\def\SEMESTER{The semester where you write the report for}
+\def\FACULTYNAME{The teacher who sponsor/directs you}
+\def\TANAME{The name of your TA}
+\def\PROJECTNUMBER{Number of the project}
+\def\TEAMNUMBER{Number of your team}
 \newcommand\individualreportcover{
     \begin{titlepage}
         \begin{center}
@@ -67,12 +80,12 @@
         {\fontsize{28}{26.45}\selectfont Senior Design Individual Report}\\
         \vspace{1.6cm}
         {\fontsize{28}{26.45}\selectfont\bf\RPTTITLE}\\
-        \vspace{0.8cm}
+        \vspace{1cm}
         {\fontsize{13}{19.5}\selectfont By}\\
-        \vspace{1.3cm}
-        {\fontsize{13}{19.5}\selectfont\bf\AUTHORNAME}\\
+        \vspace{1cm}
+        {\fontsize{13}{19.5}\selectfont\AUTHORNAME}\\
         \vspace{3.4cm}
-        {\fontsize{12}{18}\selectfont Individual Report for Senior Design, \SEMESTER\\\vspace{10pt}
+        {\fontsize{12}{18}\selectfont \SEMESTER\\\vspace{10pt}
         Sponsor: \FACULTYNAME\\\vspace{13pt}
         TA: \TANAME}\\
         \vspace{1.2cm}
@@ -83,30 +96,22 @@
 }
 \newcommand\finalreportcover{
   \begin{titlepage}
-    \newcommand{\HRule}{\rule{\linewidth}{0.1mm}} 
     \center % Center everything on the page
-     
-    %---------------------------------------------------------------------------------
-    %	HEADING SECTION
-    %---------------------------------------------------------------------------------
+    {\Large Zhejiang University / University of Illinois at Urbana-Champaign Institute} \\
+    \vfill
     \textsc{\Large ECE 445}\\[0.5cm] % heading course Number
-    \textsc{\large Senior Design Laboratory}\\[0.5cm] % heading course name
+    \textsc{\Large Senior Design Laboratory}\\[0.5cm] % heading course name
     \textsc{\Large Final Report}\\[0.5cm] % Minor heading
-    %---------------------------------------------------------------------------------
-    %	TITLE SECTION
-    %---------------------------------------------------------------------------------
-    
+    {\Large\underline{Project \#\PROJECTNUMBER}}
+    \vfill
     \HRule \\[0.5cm]
-    \huge \textbf{MetaProject: \RPTTITLE} % Title
+    \huge \textbf{\RPTTITLE} % Title
     \HRule \\[2cm]
-     
-    %---------------------------------------------------------------------------------
-    %	AUTHOR SECTION
-    %---------------------------------------------------------------------------------
+    \vfill
     \begin{minipage}{0.5\textwidth}
         \begin{center} \large
             \underline{\textbf{Team \#\TEAMNUMBER}} \\ \medskip
-            \MEMBERS
+            \AUTHORNAME
         \end{center}
     \end{minipage} \\[1.5cm]
     
@@ -116,14 +121,64 @@
             \underline{TA}: \TANAME
         \end{center}
     \end{minipage} \\[1cm]
-    
+    \vfill
     {\large \RPTDATE} % Date
     
     \vfill % Fill the rest of the page with white-space
     
     \end{titlepage}
 }
+\newcommand\generalreportcover[1]{
+  \def\RPTTYPE{#1}
+    \begin{titlepage}
+        \centering
+        {\Large Zhejiang University / University of Illinois at Urbana-Champaign Institute} \\
+        \vspace{2cm}
+        {\Large ECE 445: Senior Design Laboratory} \\
+        \vspace{1em}
+        {\Large (\SEMESTER)} \\
+        \vspace{2em}
+        {\Large \RPTTYPE} \\
+        \vfill
+        {\huge \textbf{\RPTTITLE}} % Title
+        \vfill
+        \begin{minipage}{0.5\textwidth}
+          \begin{center} \large
+              \underline{\textbf{Team \#\TEAMNUMBER}} \\ \medskip
+              \AUTHORNAME
+          \end{center}
+        \end{minipage} \\[1.5cm]
+        \vfill
+        \underline{TA:} \TANAME \\
+        \RPTDATE
+    \end{titlepage}
+}
+
+\newcommand\keywordsabstract[2]{\def\ABSTRACTCONTENT{#2}\def\KEYWORDS{#1}}
+\newcommand\acknowledgement[1]{\def\ACKNOWLEDGEMENTCONTENT{#1}}
+\newcommand\makeAbstractAcknowledgementToc{
+  \chapter*{Acknowledgement}
+  \pagenumbering{roman}
+  \setcounter{page}{2}
+  \ACKNOWLEDGEMENTCONTENT
+
+  \chapter*{Abstract}
+  \ABSTRACTCONTENT \par
+  \vspace{1em}
+  {\bf Keywords:}~\KEYWORDS
+  \tableofcontents
+  \clearpage
+  \setcounter{page}{1}
+  \pagenumbering{arabic}
+}
+\newcommand\makeToc{
+  \pagenumbering{roman}
+  \tableofcontents
+  \clearpage
+  \setcounter{page}{1}
+  \pagenumbering{arabic}
+}
+
 \AtEndDocument{
-  \renewcommand{\bibname}{References}
-  \printbibliography\addcontentsline{toc}{chapter}{References}
+  \printbibliography[heading=bibintoc, title={References}]
 }
