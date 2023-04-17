@@ -1,0 +1,41 @@
+\documentclass{senior-design}
+%%% THE FOLLOWING LINES SHALL NOT BE REMOVED! %%%%%%%%%%%%%%%%%%%
+\addbibresource{references.bib} % change `references.bib' to your own bibliography file
+\reporttitle{An interesting project}
+\semester{Spring 2023}
+\sponsor{Prof. Soap}
+\ta{Jim Hacker}
+\reportdate{April 20, 2023}
+\authornames{\student{Captain Price}{price@example.com} \\ \student{Ghost}{ghost@example.com}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Uncomment the lines you need according to the type of report:
+\teamnumber{514}
+\projectnumber{114}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Abstract using \keywordsabstract{keywords}{content of abstract}
+\input{scripts/abstract.tex}
+% Put your acknowledgement here using \acknowledgement{content}
+\input{scripts/acknowledgement.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%%% TITLE PAGE: select the one you need %%%%%%%%%%%%%%%%%%%%%%%%%
+% \individualreportcover
+\finalreportcover
+% \generalreportcover
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Abstract, acknolwedgement, and TOC %%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeAbstractAcknowledgementToc  % insert the abstract, acknowledgement and toc
+% \makeToc % insert TOC only
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{scripts/introduction.tex}
+\input{scripts/design.tex}
+\input{scripts/cite.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

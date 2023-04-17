@@ -27,10 +27,11 @@
 \RequirePackage{anyfontsize}
 \RequirePackage{csquotes}
 \RequirePackage[style=ieee]{biblatex}
-% \RequirePackage{cite}
 \RequirePackage[title, titletoc]{appendix}
-\RequirePackage{newtx}
+\RequirePackage{newtx}\defaultfontfeatures{}
+\RequirePackage[scheme=plain, fontset=fandol]{ctex}
 \RequirePackage{titlesec}
+\RequirePackage{breakurl}
 \titleformat{\chapter}
   {\normalfont\LARGE\sc\bfseries}
   {\thechapter}{1.5em}{}
@@ -47,6 +48,19 @@
 \titleformat{\subsubsection}
   {\normalfont\bfseries}
   {\thesubsubsection}{1em}{}
+
+  \lstset{
+  basicstyle=\small\ttfamily,
+  numbers=left,
+  numberstyle=\scriptsize\ttfamily\it,
+  frame=shadowbox,
+  tabsize=4,
+  breaklines,
+  columns=fixed,
+  keepspaces,
+  commentstyle=\itshape\color{ForestGreen},
+  keywordstyle=\color{Blue}\bfseries,
+}
 
 \linespread{1.15}
 \newcommand\reporttitle[1]{\def\RPTTITLE{#1}}
