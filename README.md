@@ -45,7 +45,7 @@ ZJUI毕业设计个人报告（Individual Report）的$\LaTeX$模板。
 LaTeX基础命令可参考：[Learn LaTeX in 30 minutes - Overleaf, Online LaTeX Editor](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
 
 ### 文献管理
-本模板的引文插入强烈依赖Bib$$\LaTeX$$。模板调用`biblatex`宏包，自动生成IEEE格式引文。推荐使用开源文献管理工具Zotero（ https://zotero.org/ ）配合其附加组件BetterBibTeX（ https://github.com/retorquere/zotero-better-bibtex ）进行文件管理。BetterBibTeX允许用户将文献库中的条目导出为biblatex的参考文献文件，并可设置自动更新。
+本模板的引文插入强烈依赖Bib$\LaTeX$。模板调用`biblatex`宏包，自动生成IEEE格式引文。推荐使用开源文献管理工具Zotero（ https://zotero.org/ ）配合其附加组件BetterBibTeX（ https://github.com/retorquere/zotero-better-bibtex ）进行文件管理。BetterBibTeX允许用户将文献库中的条目导出为biblatex的参考文献文件，并可设置自动更新。
 
 Zotero的使用说明：[Zotero Documentation](https://www.zotero.org/support/)
 
