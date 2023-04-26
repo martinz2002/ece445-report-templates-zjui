@@ -10,15 +10,12 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{graphicx}
 \RequirePackage{caption}
-\RequirePackage{amsmath}  % for math spacing
-\RequirePackage{amssymb}
-\RequirePackage{amsfonts}
+\RequirePackage{amsmath, amssymb, amsfonts, amsthm}  % for math spacing
 \RequirePackage[margin=2.54cm]{geometry} % page layout; same with the default of MS word
 \RequirePackage{enumitem}
 \RequirePackage{verbatim} % allows for verbatim text ignoring any TeX commands inside "verbatim" environment
 \RequirePackage{listings}
 \RequirePackage[dvipsnames,svgnames,table,xcdraw]{xcolor}
-\RequirePackage{hyperref}
 \RequirePackage[ruled,hangingcomment,nofillcomment,noend]{algorithm2e}% pseudo-code support
 \RequirePackage[en-US]{datetime2}
 \RequirePackage[bottom]{footmisc}
@@ -28,10 +25,20 @@
 \RequirePackage{csquotes}
 \RequirePackage[style=ieee]{biblatex}
 \RequirePackage[title, titletoc]{appendix}
-\RequirePackage{newtx}\defaultfontfeatures{}
 \RequirePackage[scheme=plain, fontset=fandol]{ctex}
 \RequirePackage{titlesec}
-\RequirePackage{breakurl}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{mathptmx}
+\RequirePackage{hyperref}
+\RequirePackage{xurl}
+
+\newtheorem{defn}{Definition}[chapter]
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem{prf}{Proof}[chapter]
+\newtheorem{prop}{Proposition}[chapter]
+\newtheorem{lem}[thm]{Lemma}
+
 \titleformat{\chapter}
   {\normalfont\LARGE\sc\bfseries}
   {\thechapter}{1.5em}{}
@@ -52,8 +59,7 @@
   \lstset{
   basicstyle=\small\ttfamily,
   numbers=left,
-  numberstyle=\scriptsize\ttfamily\it,
-  frame=shadowbox,
+  numberstyle=\scriptsize,
   tabsize=4,
   breaklines,
   columns=fixed,
@@ -61,7 +67,6 @@
   commentstyle=\itshape\color{ForestGreen},
   keywordstyle=\color{Blue}\bfseries,
 }
-
 \linespread{1.15}
 \newcommand\reporttitle[1]{\def\RPTTITLE{#1}}
 \newcommand\reportdate[1]{\def\RPTDATE{#1}}
