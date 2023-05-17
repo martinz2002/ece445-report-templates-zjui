@@ -39,7 +39,8 @@
 \RequirePackage{hyperref}
 \RequirePackage{xurl}
 \RequirePackage{appendix}
-
+\RequirePackage{setspace}
+\onehalfspacing
 \newtheorem{defn}{Definition}[chapter]
 \newtheorem{thm}{Theorem}[chapter]
 \newtheorem{cor}{Corollary}[thm]
@@ -76,10 +77,10 @@
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \fancypagestyle{plain}{
-  \fancyhead[L]{\MakeUppercase{\RPTTITLE}}
+  \fancyhead[L]{\MakeUppercase{\RPTTYPE}}
   \fancyhead[R]{\MakeUppercase{\leftmark}}
   \fancyfoot[C]{--\thepage--}}
-\fancyhead[L]{\MakeUppercase{\RPTTITLE}}
+\fancyhead[L]{\MakeUppercase{\RPTTYPE}}
 \fancyhead[R]{\MakeUppercase{\leftmark}}
 \fancyfoot[C]{--\thepage--}
 
@@ -104,7 +105,7 @@
 \newcommand\projectnumber[1]{\def\PROJECTNUMBER{#1}}
 \newcommand\teamnumber[1]{\def\TEAMNUMBER{#1}}
 \newcommand{\HRule}{\rule{\linewidth}{0.1mm}}
-\newcommand\reporttype[1]{\def\RPTTYPE{#1}}
+\newcommand\reporttype[1]{\def\GRPTTYPE{#1}}
 \def\RPTTYPE{Type of the report}
 \def\ABSTRACTCONTENT{You did not specify the content of abstract.}
 \def\ACKNOWLEDGEMENTCONTENT{You did not specify the content of acknowledgement.}
@@ -118,20 +119,25 @@
 \def\PROJECTNUMBER{Number of the project}
 \def\TEAMNUMBER{Number of your team}
 \newcommand\individualreportcover{
+  \def\RPTTYPE{SENIOR DESIGN INDIVIDUAL REPORT}
   \begin{titlepage}
     \begin{center}
       ~~\\ % to make the vspace effective
       \vspace{1.5cm}
       {\fontsize{15}{18.4}\selectfont Zhejiang University / University of Illinois Urbana-Champaign Institute}\\
       \vspace{1.88cm}
-      {\fontsize{28}{26.45}\selectfont Senior Design Individual Report}\\
+      {\fontsize{28}{42}\selectfont Senior Design Individual Report}\\
       \vspace{1.6cm}
-      {\fontsize{28}{26.45}\selectfont\bf\textsc{\MakeUppercase{\RPTTITLE}}}\\
+      \begin{minipage}{\linewidth}
+        \centering
+        \fontsize{28}{28}\selectfont
+        \MakeUppercase{\RPTTITLE}
+      \end{minipage}\\
       \vspace{1cm}
       {\fontsize{13}{19.5}\selectfont By}\\
       \vspace{1cm}
       {\fontsize{13}{19.5}\selectfont\AUTHORNAME}\\
-      \vspace{3.4cm}
+      \vfill
       {\fontsize{12}{18}\selectfont \SEMESTER\\\vspace{10pt}
         Sponsor: \FACULTYNAME\\\vspace{13pt}
         TA: \TANAME}\\
@@ -142,6 +148,7 @@
   \end{titlepage}
 }
 \newcommand\finalreportcover{
+  \def\RPTTYPE{FINAL REPORT}
   \begin{titlepage}
     \center % Center everything on the page
     {\Large Zhejiang University / University of Illinois at Urbana-Champaign Institute} \\
@@ -152,7 +159,7 @@
     {\Large\underline{Project \#\PROJECTNUMBER}}
     \vfill
     \HRule \\[0.5cm]
-    \huge \textbf{\RPTTITLE} % Title
+    \huge \MakeUppercase{\RPTTITLE} % Title
     \HRule \\[2cm]
     \vfill
     \begin{minipage}{0.5\textwidth}
@@ -176,17 +183,19 @@
   \end{titlepage}
 }
 \newcommand\generalreportcover{
+  \def\RPTTYPE{\GRPTTYPE}
   \begin{titlepage}
-    \centering
+    \center % Center everything on the page
     {\Large Zhejiang University / University of Illinois at Urbana-Champaign Institute} \\
-    \vspace{2cm}
-    {\Large ECE 445: Senior Design Laboratory} \\
-    \vspace{1em}
-    {\Large (\SEMESTER)} \\
-    \vspace{2em}
-    {\Large \RPTTYPE} \\
     \vfill
-    {\huge \textbf{\RPTTITLE}} % Title
+    \textsc{\Large ECE 445}\\[0.5cm] % heading course Number
+    \textsc{\Large Senior Design Laboratory}\\[0.5cm] % heading course name
+    \textsc{\Large \GRPTTYPE}\\[0.5cm] % Minor heading
+    {\Large\underline{Project \#\PROJECTNUMBER}}
+    \vfill
+    \HRule \\[0.5cm]
+    \huge \MakeUppercase{\RPTTITLE} % Title
+    \HRule \\[2cm]
     \vfill
     \begin{minipage}{0.5\textwidth}
       \begin{center} \large
@@ -194,8 +203,17 @@
         \AUTHORNAME
       \end{center}
     \end{minipage} \\[1.5cm]
+
+    \begin{minipage}{0.5\textwidth}
+      \begin{center}
+        \large
+        \underline{TA}: \TANAME
+      \end{center}
+    \end{minipage} \\[1cm]
     \vfill
-    \underline{TA:} \TANAME \\
-    \RPTDATE
+    {\large \RPTDATE} % Date
+
+    \vfill % Fill the rest of the page with white-space
+
   \end{titlepage}
 }

@@ -1,0 +1,103 @@
+\documentclass{senior-design}
+\usepackage{lipsum}
+
+%%% Report information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\reporttitle{Mechanical structure innovation of adaptive robot vacuum suitable for multiple floors and multiple rooms}
+% \reporttype{Individual Progress Report} % Uncomment this line if you want to use \generalreportcover
+\semester{Spring 2023}
+\sponsor{Prof. Sam Example}
+\ta{Jim Hacker}
+\reportdate{April 20, 2023}
+\authornames{
+    张\quad 三\\
+    Mike Simon
+}
+\addbibresource{references.bib} % The bib database
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Uncomment the lines you need according to the type of report:
+\projectnumber{114}
+\teamnumber{514}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\frontmatter
+%%% TITLE PAGE: select the one you need %%%%%%%%%%%%%%%%%%%%%%%%%
+% \individualreportcover  % coverpage for individual report used for ZJU degree appl.
+% \input{commitment_v4.tex}   % commitment statement required by individual report
+\finalreportcover % coverpage for team final report
+% \generalreportcover % coverpage for other reports; NEEDS \reporttype{<Type>}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Abstract}
+% Put your abstract here
+\lipsum[1-3]
+\paragraph{Keywords}
+% Put keywords here
+Keyword 1, keyword 2, keyword 3
+%%% TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\mainmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+% Replace the following stuff with your own
+This is a sample citation \cite{haynes1949}.
+
+Another sample citation will cite \textcite{LiGongTanYuanQiJian} as an example for citing a webpage.
+
+\lipsum[1-10]
+
+\chapter{Literature Review}
+% Replace the following stuff with your own
+\lipsum[11-40]
+
+\chapter{Methodology}
+% Replace the following stuff with your own
+\lipsum[2-30]
+
+\chapter{Results}
+% Replace the following stuff with your own
+\lipsum[31-40]
+
+\chapter{Discussion}
+% Replace the following stuff with your own
+\lipsum[41-50]
+
+\chapter{Conclusion}
+% Replace the following stuff with your own
+\lipsum[51-60]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand*{\UrlFont}{\rmfamily}
+\printbibliography[title={References},heading=bibintoc]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Appendices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\titleformat{\chapter}
+{\normalfont\LARGE\sc\bfseries}
+{Appendix \thechapter}{1.5em}{}
+\titlespacing{\chapter}{0pt}{0pt}{2em}
+\begin{appendices}
+% Put all appendices here
+\chapter{An Example Appendix}
+% Replace the following stuff with your own appendix
+\lipsum[61-70]
+
+\chapter{Another Example Appendix}
+% Replace the following stuff with your own appendix
+\lipsum[71-80]
+
+\end{appendices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+%%% Acknowledgement %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Acknowledgement}
+% Replace the following line with your own acknowledgement
+\lipsum[81-90]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
