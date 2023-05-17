@@ -1,12 +1,15 @@
 \documentclass{senior-design}
-%%% THE FOLLOWING LINES SHALL NOT BE REMOVED! %%%%%%%%%%%%%%%%%%%
-\addbibresource{references.bib} % change `references.bib' to your own bibliography file
+
+
+%%% Report information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \reporttitle{An interesting project}
+% \reporttype{The type of the report, used for \verb|\generalreportcover{<report type>}|} % Uncomment this line if you want to use \generalreportcover{}
 \semester{Spring 2023}
 \sponsor{Prof. Soap}
 \ta{Jim Hacker}
 \reportdate{April 20, 2023}
-\authornames{\student{Captain Price}{price@example.com} \\ \student{Ghost}{ghost@example.com}}
+\authornames{Captain Price and Ghost}
+\addbibresource{references.bib}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% Uncomment the lines you need according to the type of report:
@@ -14,28 +17,56 @@
 \projectnumber{114}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Abstract using \keywordsabstract{keywords}{content of abstract}
-\input{scripts/abstract.tex}
-% Put your acknowledgement here using \acknowledgement{content}
-\input{scripts/acknowledgement.tex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}
+\frontmatter
 %%% TITLE PAGE: select the one you need %%%%%%%%%%%%%%%%%%%%%%%%%
-\individualreportcover
-% \finalreportcover
+\individualreportcover  % coverpage for individual report used for ZJU degree appl.
+\input{commitment_v4.tex}   % commitment statement required by individual report
+% \finalreportcover % coverpage for team final report
 % \generalreportcover{put the title of the project here}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% Abstract, acknolwedgement, and TOC %%%%%%%%%%%%%%%%%%%%%%%%%%
-\makeAbstractAcknowledgementToc  % insert the abstract, acknowledgement and toc
-% \makeToc % insert TOC only
+%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Abstract}
+% Put your abstract here
+
+\paragraph{Keywords}
+% Put keywords here
+
+%%% TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\mainmatter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% Body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{scripts/introduction.tex}
-\input{scripts/design.tex}
-\input{scripts/cite.tex}
+\chapter{Introduction}
+\chapter{Literature Review}
+\chapter{Methodology}
+\chapter{Results}
+\chapter{Discussion}
+\chapter{Conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Appendices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\titleformat{\chapter}
+{\normalfont\LARGE\sc\bfseries}
+{Appendix \thechapter}{1.5em}{}
+\titlespacing{\chapter}{0pt}{0pt}{2em}
+\begin{appendices}
+% Put all appendices here
+\chapter{an appendix}
+\end{appendices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+%%% Acknowledgement %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Acknowledgement}
+% Put your ackonwledgement here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand*{\UrlFont}{\rmfamily}
+\printbibliography[title={References},heading=bibintoc]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
