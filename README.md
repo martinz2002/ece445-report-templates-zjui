@@ -26,7 +26,9 @@ ZJUI毕业设计个人报告（Individual Report）的$\LaTeX$模板。
 
 本仓库提供的一系列新命令列举如下：
 
-`\reporttitle{<Title>}`定义报告的标题。标题将出现在封面上。
+#### 报告信息类
+
+`\reporttitle{<Title>}`定义项目的标题。标题将出现在封面填写项目名称的位置上。
 
 `\reporttype{<Type>}`定义报告的类型。**该项仅在通用报告封面上出现。**
 
@@ -41,6 +43,16 @@ ZJUI毕业设计个人报告（Individual Report）的$\LaTeX$模板。
 `\projectnumber{<Number>}`定义项目编号。**仅在Final Report和个人报告封面出现。**
 
 `\teamnumber{<Number>}`定义组号。**仅在Final Report和通用报告封面上出现。**
+
+#### 封面生成类
+
+`\individualreportcover`将生成一个个人毕业设计报告的封面。个人毕业设计报告（Senior Design Individual Report）用于ZJU-UIUC联合学院本科生申请浙江大学学位。
+
+`\finalreportcover`将生成一个Final Report的封面。
+
+`\generalreportcover`将生成一个通用的封面（例如Individual Progress Report）。通用封面包含报告的类型（例如Individual Progress Report）和标题（填写项目名称）。
+
+### 以下命令已弃用
 
 ~~`\student{<Name>}{<Email>}`生成一个学生信息字符串，格式为粗体姓名+带`mailto`超链接的电子邮件地址。常配合`\authorname{}`使用。~~ 已弃用。
 
@@ -57,6 +69,8 @@ ZJUI毕业设计个人报告（Individual Report）的$\LaTeX$模板。
 ### 文献管理
 本模板的引文插入强烈依赖`biblatex`。模板调用`biblatex`宏包，自动生成IEEE格式引文。推荐使用开源文献管理工具Zotero（ https://zotero.org/ ）配合其附加组件BetterBibTeX（ https://github.com/retorquere/zotero-better-bibtex ）进行文件管理。BetterBibTeX允许用户将文献库中的条目导出为biblatex的参考文献文件，并可设置自动更新。
 
+`sample_report.tex`的第14行使用`\addbibresource{<FileName>}`命令指定了本文档所使用的`biblatex`数据库文件。
+
 IEEE格式引文参考：[IEEE Reference Guide -- IEEE Author Center](https://ieeeauthorcenter.ieee.org/wp-content/uploads/IEEE-Reference-Guide.pdf)
 
 Zotero的使用说明：[Zotero Documentation](https://www.zotero.org/support/)
@@ -67,7 +81,7 @@ BetterBibTeX的使用说明：[Better BibTeX for Zotero :: Better BibTeX for Zot
 
 由于模板采用了BibLaTeX作为引文工具，您需要特别注意编译过程。限于笔者精力，详细信息不在此放出（主要原因是我也不会直接用命令行编译……）。如果您不了解具体如何编译，笔者建议您采用以下两种方案：
 
-1. 采用在线$\LaTeX$编辑平台，如Overleaf。这类平台能自动处理如文献引用、图片编号等交叉引用的问题。
+1. 采用在线$\LaTeX$编辑平台，如Overleaf。这类平台能自动处理如文献引用、图片编号等交叉引用的问题。（其后端应该是采用了`latexmk`的编译方式）
 
 2. **在您本地使用微软Visual Studio Code软件+相应插件**：到VSCode的Marketplace下载插件"LaTeX Workshop"，并在设置中找到“Latex-workshop > Latex: Recipes”项，点击“在 settings.json 中编辑”，删除原有`"latex-workshop.latex.tools"`和`""latex-workshop.latex.recipes"`项的内容，并将以下内容复制到您的`settings.json`文件中：
 

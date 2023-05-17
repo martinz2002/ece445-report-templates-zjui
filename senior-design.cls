@@ -11,7 +11,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{caption}
 \RequirePackage{amsmath, amssymb, amsfonts, amsthm}  % for math spacing
-\RequirePackage[margin=2.54cm]{geometry} % page layout; same with the default of MS word
+\RequirePackage[margin=1in]{geometry} % page layout 1' margin
 \RequirePackage{enumitem}
 \RequirePackage{verbatim} % allows for verbatim text ignoring any TeX commands inside "verbatim" environment
 \RequirePackage{listings}
@@ -122,7 +122,7 @@
     \begin{center}
       ~~\\ % to make the vspace effective
       \vspace{1.5cm}
-      {\fontsize{16}{18.4}\selectfont Zhejiang University / University of Illinois Urbana-Champaign Institute}\\
+      {\fontsize{15}{18.4}\selectfont Zhejiang University / University of Illinois Urbana-Champaign Institute}\\
       \vspace{1.88cm}
       {\fontsize{28}{26.45}\selectfont Senior Design Individual Report}\\
       \vspace{1.6cm}
@@ -175,7 +175,7 @@
 
   \end{titlepage}
 }
-\newcommand\generalreportcover[1]{
+\newcommand\generalreportcover{
   \begin{titlepage}
     \centering
     {\Large Zhejiang University / University of Illinois at Urbana-Champaign Institute} \\
