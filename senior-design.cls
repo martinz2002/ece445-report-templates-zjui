@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{senior-design}[2023-04-17 by Martin Zhong (zhongmartin@outlook.com) Template for ZJU-UIUC Senior Design Inividual Report]
 
-\LoadClass[letterpaper,11pt]{report}
+\LoadClass[letterpaper,11pt,oneside]{book}
 
 \RequirePackage{booktabs}
 \RequirePackage{tabularx}
@@ -17,20 +17,28 @@
 \RequirePackage{listings}
 \RequirePackage[dvipsnames,svgnames,table,xcdraw]{xcolor}
 \RequirePackage[ruled,hangingcomment,nofillcomment,noend]{algorithm2e}% pseudo-code support
-\RequirePackage[en-US]{datetime2}
 \RequirePackage[bottom]{footmisc}
 \RequirePackage{float}
 \RequirePackage{tcolorbox}
 \RequirePackage{anyfontsize}
 \RequirePackage{csquotes}
 \RequirePackage[style=ieee]{biblatex}
-\RequirePackage[title, titletoc]{appendix}
-\RequirePackage[scheme=plain, fontset=fandol]{ctex}
+\renewbibmacro*{date}{%
+  \iffieldundef{year}
+  {\bibstring{nodate}}
+  {\printdate}}
+\renewcommand{\bibname}{References}
+\renewcommand\bibname{References}
+\RequirePackage[header, title, titletoc]{appendix}
+\RequirePackage[scheme=plain, fontset=fandol]{ctex} % In case you need to input Chinese characters
 \RequirePackage{titlesec}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{mathptmx}
+\RequirePackage{bm}
+\RequirePackage[scaled=0.95]{helvet}
 \RequirePackage{hyperref}
 \RequirePackage{xurl}
+\RequirePackage{appendix}
 
 \newtheorem{defn}{Definition}[chapter]
 \newtheorem{thm}{Theorem}[chapter]
@@ -68,11 +76,11 @@
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \fancypagestyle{plain}{
-  \fancyhead[L]{\RPTTITLE}
-  \fancyhead[R]{\leftmark}
+  \fancyhead[L]{\MakeUppercase{\RPTTITLE}}
+  \fancyhead[R]{\MakeUppercase{\leftmark}}
   \fancyfoot[C]{--\thepage--}}
-\fancyhead[L]{\RPTTITLE}
-\fancyhead[R]{\leftmark}
+\fancyhead[L]{\MakeUppercase{\RPTTITLE}}
+\fancyhead[R]{\MakeUppercase{\leftmark}}
 \fancyfoot[C]{--\thepage--}
 
 \lstset{
@@ -94,9 +102,10 @@
 \newcommand\sponsor[1]{\def\FACULTYNAME{#1}}
 \newcommand\ta[1]{\def\TANAME{#1}}
 \newcommand\projectnumber[1]{\def\PROJECTNUMBER{#1}}
-\newcommand\student[2]{{\bf#1}\hspace{1em}\href{mailto:#2}{#2}}
 \newcommand\teamnumber[1]{\def\TEAMNUMBER{#1}}
 \newcommand{\HRule}{\rule{\linewidth}{0.1mm}}
+\newcommand\reporttype[1]{\def\RPTTYPE{#1}}
+\def\RPTTYPE{Type of the report}
 \def\ABSTRACTCONTENT{You did not specify the content of abstract.}
 \def\ACKNOWLEDGEMENTCONTENT{You did not specify the content of acknowledgement.}
 \def\KEYWORDS{Keywords of the project}
@@ -117,7 +126,7 @@
       \vspace{1.88cm}
       {\fontsize{28}{26.45}\selectfont Senior Design Individual Report}\\
       \vspace{1.6cm}
-      {\fontsize{28}{26.45}\selectfont\bf\RPTTITLE}\\
+      {\fontsize{28}{26.45}\selectfont\bf\textsc{\RPTTITLE}}\\
       \vspace{1cm}
       {\fontsize{13}{19.5}\selectfont By}\\
       \vspace{1cm}
@@ -167,7 +176,6 @@
   \end{titlepage}
 }
 \newcommand\generalreportcover[1]{
-  \def\RPTTYPE{#1}
   \begin{titlepage}
     \centering
     {\Large Zhejiang University / University of Illinois at Urbana-Champaign Institute} \\
@@ -190,33 +198,4 @@
     \underline{TA:} \TANAME \\
     \RPTDATE
   \end{titlepage}
-}
-
-\newcommand\keywordsabstract[2]{\def\ABSTRACTCONTENT{#2}\def\KEYWORDS{#1}}
-\newcommand\acknowledgement[1]{\def\ACKNOWLEDGEMENTCONTENT{#1}}
-\newcommand\makeAbstractAcknowledgementToc{
-  \chapter*{Acknowledgement}
-  \pagenumbering{roman}
-  \setcounter{page}{2}
-  \ACKNOWLEDGEMENTCONTENT
-
-  \chapter*{Abstract}
-  \ABSTRACTCONTENT \par
-  \vspace{1em}
-  {\bf Keywords:}~\KEYWORDS
-  \tableofcontents
-  \clearpage
-  \setcounter{page}{1}
-  \pagenumbering{arabic}
-}
-\newcommand\makeToc{
-  \pagenumbering{roman}
-  \tableofcontents
-  \clearpage
-  \setcounter{page}{1}
-  \pagenumbering{arabic}
-}
-
-\AtEndDocument{
-  \printbibliography[heading=bibintoc, title={References}]
 }

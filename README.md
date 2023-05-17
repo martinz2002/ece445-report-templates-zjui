@@ -7,16 +7,28 @@ ZJUI毕业设计个人报告（Individual Report）的$\LaTeX$模板。
 
 慢慢来，做着看吧。
 
-## 用法
-本模板基于`report`类编写，默认使用letterpaper纸张、11号字（与院方下发模板一致），页边距2.54cm（约1英寸）。
+## 许可
+本模板（除`references.bib`和`commitment_v4.tex`中的所有内容）根据MIT协议开放源代码。
 
-### 编写
+`references.bib`中条目版权根据其所属数据库与作者的协议归数据库和/或作者所有。
+
+`commitment_v4.tex`中的所有内容来自浙江大学ZJU-UIUC联合学院通过ECE445: Senior Design Lab课程的Blackboard网站下发的`commitment_V4.pdf`文档。
+
+## 用法
+本模板基于`book`类编写，默认使用a4paper纸张、11磅字（与院方下发模板一致），页边距2.54cm（约1英寸）。
+
+### $\LaTeX$基本语法
+可参考：[Learn LaTeX in 30 minutes - Overleaf, Online LaTeX Editor](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
+
+### 新命令
 
 **本仓库根目录下的`sample_report.tex`提供了一个开箱即用的样本，您可以根据需要填写、删除信息并编译。**
 
 本仓库提供的一系列新命令列举如下：
 
 `\reporttitle{<Title>}`定义报告的标题。标题将出现在封面上。
+
+`\reporttype{<Type>}`定义报告的类型。**该项仅在通用报告封面上出现。**
 
 `\semester{<Semester>}`定义报告所属的学期，如Spring 2023。将出现在封面上。
 
@@ -30,22 +42,22 @@ ZJUI毕业设计个人报告（Individual Report）的$\LaTeX$模板。
 
 `\teamnumber{<Number>}`定义组号。**仅在Final Report和通用报告封面上出现。**
 
-`\student{<Name>}{<Email>}`生成一个学生信息字符串，格式为粗体姓名+带`mailto`超链接的电子邮件地址。常配合`\authorname{}`使用。
+~~`\student{<Name>}{<Email>}`生成一个学生信息字符串，格式为粗体姓名+带`mailto`超链接的电子邮件地址。常配合`\authorname{}`使用。~~ 已弃用。
 
-`\authornames{<AuthorInfo>}`定义作者信息，可以是单行也可以是多行。例如，`\authorname{\student{Zhang San}{san@example.com} \\ \student{Li Si}{si@example.com}}`。
+~~`\authornames{<AuthorInfo>}`定义作者信息，可以是单行也可以是多行。例如，`\authorname{\student{Zhang San}{san@example.com} \\ \student{Li Si}{si@example.com}}`。~~ 已弃用。
 
-`\keywordsabstract{<KeyWords>}{Abstract}`定义了在摘要页将出现的内容，包括关键词（在下）和摘要本体（在上）。
+~~`\keywordsabstract{<KeyWords>}{Abstract}`定义了在摘要页将出现的内容，包括关键词（在下）和摘要本体（在上）。~~ 已弃用。
 
-`\acknowledgement{<Acknowledgement>}`定义了在声明、致谢页将出现的内容。
+~~`\acknowledgement{<Acknowledgement>}`定义了在声明、致谢页将出现的内容。~~ 已弃用。
 
-`\makeAbstractAcknowledgementToc`插入摘要、声明致谢和目录。单独做一个命令的原因在于这三个页面的页码格式（使用小写罗马数字）与正文不同，使用单独命令更容易实现，使用也更灵活。对于不需要这些内容的通用报告（例如，个人进度报告 Individual Progress Report），不书写这条命令便可以不打印摘要和致谢。
+~~`\makeAbstractAcknowledgementToc`插入摘要、声明致谢和目录。单独做一个命令的原因在于这三个页面的页码格式（使用小写罗马数字）与正文不同，使用单独命令更容易实现，使用也更灵活。对于不需要这些内容的通用报告（例如，个人进度报告 Individual Progress Report），不书写这条命令便可以不打印摘要和致谢。~~ 已弃用。
 
-`\makeToc`插入目录页，其中目录页的页码使用小写罗马数字。
-
-LaTeX基础命令可参考：[Learn LaTeX in 30 minutes - Overleaf, Online LaTeX Editor](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
+~~`\makeToc`插入目录页，其中目录页的页码使用小写罗马数字。~~ 已弃用。
 
 ### 文献管理
-本模板的引文插入强烈依赖Bib$\LaTeX$。模板调用`biblatex`宏包，自动生成IEEE格式引文。推荐使用开源文献管理工具Zotero（ https://zotero.org/ ）配合其附加组件BetterBibTeX（ https://github.com/retorquere/zotero-better-bibtex ）进行文件管理。BetterBibTeX允许用户将文献库中的条目导出为biblatex的参考文献文件，并可设置自动更新。
+本模板的引文插入强烈依赖`biblatex`。模板调用`biblatex`宏包，自动生成IEEE格式引文。推荐使用开源文献管理工具Zotero（ https://zotero.org/ ）配合其附加组件BetterBibTeX（ https://github.com/retorquere/zotero-better-bibtex ）进行文件管理。BetterBibTeX允许用户将文献库中的条目导出为biblatex的参考文献文件，并可设置自动更新。
+
+IEEE格式引文参考：[IEEE Reference Guide -- IEEE Author Center](https://ieeeauthorcenter.ieee.org/wp-content/uploads/IEEE-Reference-Guide.pdf)
 
 Zotero的使用说明：[Zotero Documentation](https://www.zotero.org/support/)
 
