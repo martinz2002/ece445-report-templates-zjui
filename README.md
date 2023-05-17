@@ -67,9 +67,9 @@ ZJUI毕业设计个人报告（Individual Report）的$\LaTeX$模板。
 ~~`\makeToc`插入目录页，其中目录页的页码使用小写罗马数字。~~ 已弃用。
 
 ### 文献管理
-本模板的引文插入强烈依赖`biblatex`。模板调用`biblatex`宏包，自动生成IEEE格式引文。推荐使用开源文献管理工具Zotero（ https://zotero.org/ ）配合其附加组件BetterBibTeX（ https://github.com/retorquere/zotero-better-bibtex ）进行文件管理。BetterBibTeX允许用户将文献库中的条目导出为biblatex的参考文献文件，并可设置自动更新。
+本模板的引文插入强烈依赖`biblatex`。模板调用`biblatex`宏包，自动生成IEEE格式引文。推荐使用开源文献管理工具Zotero（ https://zotero.org/ ）配合其附加组件BetterBibTeX（ https://github.com/retorquere/zotero-better-bibtex ）进行文件管理。BetterBibTeX允许用户将文献库中的条目导出为biblatex的参考文献文件，并可设置自动更新。在导言区使用`\addbibresource{<FileName>}`命令即可指定文档所使用的`biblatex`数据库文件。
 
-`sample_report.tex`的第14行使用`\addbibresource{<FileName>}`命令指定了本文档所使用的`biblatex`数据库文件。
+`biblatex`宏包文档：[The biblatex Package](http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf)
 
 IEEE格式引文参考：[IEEE Reference Guide -- IEEE Author Center](https://ieeeauthorcenter.ieee.org/wp-content/uploads/IEEE-Reference-Guide.pdf)
 
