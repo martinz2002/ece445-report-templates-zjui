@@ -126,7 +126,7 @@
       \vspace{1.88cm}
       {\fontsize{28}{26.45}\selectfont Senior Design Individual Report}\\
       \vspace{1.6cm}
-      {\fontsize{28}{26.45}\selectfont\bf\textsc{\RPTTITLE}}\\
+      {\fontsize{28}{26.45}\selectfont\bf\textsc{\MakeUppercase{\RPTTITLE}}}\\
       \vspace{1cm}
       {\fontsize{13}{19.5}\selectfont By}\\
       \vspace{1cm}
