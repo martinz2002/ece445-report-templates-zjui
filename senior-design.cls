@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{senior-design}[2023-04-17 by Martin Zhong (zhongmartin@outlook.com) Template for ZJU-UIUC Senior Design Inividual Report]
 
-\LoadClass[letterpaper,11pt,oneside]{book}
+\LoadClass[a4paper,11pt,oneside]{book}
 
 \RequirePackage{booktabs}
 \RequirePackage{tabularx}
