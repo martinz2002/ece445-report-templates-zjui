@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{senior-design}[2023-05-19 by Martin Zhong (zhongmartin@outlook.com) Template for ZJU-UIUC Senior Design Inividual Report]
 
-\LoadClass[a4paper,12pt,oneside]{book}
+\LoadClass[a4paper,12pt,twoside,openany]{book}
 
 \RequirePackage{booktabs}
 \RequirePackage{tabularx}
@@ -75,10 +75,10 @@
 \fancypagestyle{plain}{
   \fancyhead[L]{\MakeUppercase{\RPTTYPE}}
   \fancyhead[R]{\MakeUppercase{\leftmark}}
-  \fancyfoot[C]{--\thepage--}}
+  \fancyfoot[C]{\thepage}}
 \fancyhead[L]{\MakeUppercase{\RPTTYPE}}
 \fancyhead[R]{\MakeUppercase{\leftmark}}
-\fancyfoot[C]{--\thepage--}
+\fancyfoot[C]{\thepage}
 
 \lstset{
   basicstyle=\small\ttfamily,
