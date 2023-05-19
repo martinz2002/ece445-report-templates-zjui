@@ -36,12 +36,10 @@
 \RequirePackage{mathptmx}
 \RequirePackage{bm}
 \RequirePackage[scaled=0.95]{helvet}
-% \RequirePackage{pxfonts}
 \RequirePackage{hyperref}
 \RequirePackage{xurl}
 \RequirePackage{appendix}
 \RequirePackage{setspace}
-\RequirePackage[parfill]{parskip}
 \onehalfspacing
 
 \setenumerate[1]{
