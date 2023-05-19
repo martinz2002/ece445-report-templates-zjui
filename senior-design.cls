@@ -38,7 +38,6 @@
 \RequirePackage[scaled=0.95]{helvet}
 \RequirePackage{hyperref}
 \RequirePackage{xurl}
-\RequirePackage{appendix}
 \RequirePackage{setspace}
 \onehalfspacing
 
