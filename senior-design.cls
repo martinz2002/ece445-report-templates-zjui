@@ -136,7 +136,7 @@
       \begin{minipage}{\linewidth}
         \centering
         \fontsize{28}{28}\selectfont
-        \MakeUppercase{\RPTTITLE}
+        \textbf{\MakeUppercase{\RPTTITLE}}
       \end{minipage}\\
       \vspace{1cm}
       {\fontsize{13}{19.5}\selectfont By}\\
@@ -164,7 +164,7 @@
     {\Large\underline{Project \#\PROJECTNUMBER}}
     \vfill
     \HRule \\[0.5cm]
-    \huge \MakeUppercase{\RPTTITLE} % Title
+    \huge \textbf{\MakeUppercase{\RPTTITLE}} % Title
     \HRule \\[2cm]
     \vfill
     \begin{minipage}{0.5\textwidth}
@@ -198,7 +198,7 @@
     {\Large\underline{Project \#\PROJECTNUMBER}}
     \vfill
     \HRule \\[0.5cm]
-    \huge \MakeUppercase{\RPTTITLE} % Title
+    \huge \textbf{\MakeUppercase{\RPTTITLE}} % Title
     \HRule \\[2cm]
     \vfill
     \begin{minipage}{0.5\textwidth}
