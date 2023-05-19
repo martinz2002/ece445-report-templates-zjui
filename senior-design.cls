@@ -73,11 +73,11 @@
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \fancypagestyle{plain}{
-  \fancyhead[L]{\MakeUppercase{\RPTTYPE}}
-  \fancyhead[R]{\MakeUppercase{\leftmark}}
+  \fancyhead[L]{\scriptsize\MakeUppercase{\RPTTYPE}}
+  \fancyhead[R]{\scriptsize\MakeUppercase{\leftmark}}
   \fancyfoot[C]{\thepage}}
-\fancyhead[L]{\MakeUppercase{\RPTTYPE}}
-\fancyhead[R]{\MakeUppercase{\leftmark}}
+\fancyhead[L]{\scriptsize\MakeUppercase{\RPTTYPE}}
+\fancyhead[R]{\scriptsize\MakeUppercase{\leftmark}}
 \fancyfoot[C]{\thepage}
 
 \lstset{
