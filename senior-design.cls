@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{senior-design}[2023-04-17 by Martin Zhong (zhongmartin@outlook.com) Template for ZJU-UIUC Senior Design Inividual Report]
+\ProvidesClass{senior-design}[2023-05-19 by Martin Zhong (zhongmartin@outlook.com) Template for ZJU-UIUC Senior Design Inividual Report]
 
-\LoadClass[a4paper,11pt,oneside]{book}
+\LoadClass[a4paper,12pt,oneside]{book}
 
 \RequirePackage{booktabs}
 \RequirePackage{tabularx}
@@ -10,7 +10,7 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{graphicx}
 \RequirePackage{caption}
-\RequirePackage{amsmath, amssymb, amsfonts, amsthm}  % for math spacing
+\RequirePackage{amsmath, amssymb, amsfonts}  % for math spacing
 \RequirePackage[margin=1in]{geometry} % page layout 1' margin
 \RequirePackage{enumitem}
 \RequirePackage{verbatim} % allows for verbatim text ignoring any TeX commands inside "verbatim" environment
@@ -36,17 +36,13 @@
 \RequirePackage{mathptmx}
 \RequirePackage{bm}
 \RequirePackage[scaled=0.95]{helvet}
+% \RequirePackage{pxfonts}
 \RequirePackage{hyperref}
 \RequirePackage{xurl}
 \RequirePackage{appendix}
 \RequirePackage{setspace}
+\RequirePackage[parfill]{parskip}
 \onehalfspacing
-\newtheorem{defn}{Definition}[chapter]
-\newtheorem{thm}{Theorem}[chapter]
-\newtheorem{cor}{Corollary}[thm]
-\newtheorem{prf}{Proof}[chapter]
-\newtheorem{prop}{Proposition}[chapter]
-\newtheorem{lem}[thm]{Lemma}
 
 \setenumerate[1]{
   itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
@@ -106,6 +102,15 @@
 \newcommand\teamnumber[1]{\def\TEAMNUMBER{#1}}
 \newcommand{\HRule}{\rule{\linewidth}{0.1mm}}
 \newcommand\reporttype[1]{\def\GRPTTYPE{#1}}
+\newcommand\teammember[3]{
+  \textbf{#1}\quad%Chinese name
+  \textbf{#2}\\%English name
+  \href{mailto:#3}{#3}%Email
+}
+\newcommand\teammemberenglish[2]{%For those don't have English name
+  \textbf{#1}\\%name
+  \href{mailto:#2}{#2}%Email
+}
 \def\RPTTYPE{Type of the report}
 \def\ABSTRACTCONTENT{You did not specify the content of abstract.}
 \def\ACKNOWLEDGEMENTCONTENT{You did not specify the content of acknowledgement.}
@@ -136,7 +141,8 @@
       \vspace{1cm}
       {\fontsize{13}{19.5}\selectfont By}\\
       \vspace{1cm}
-      {\fontsize{13}{19.5}\selectfont\AUTHORNAME}\\
+      {\fontsize{13}{19.5}\selectfont\AUTHORNAME}
+
       \vfill
       {\fontsize{12}{18}\selectfont \SEMESTER\\\vspace{10pt}
         Sponsor: \FACULTYNAME\\\vspace{13pt}
@@ -148,10 +154,9 @@
   \end{titlepage}
 }
 \newcommand\finalreportcover{
-  \def\RPTTYPE{FINAL REPORT}
+  \def\RPTTYPE{Final Report}
   \begin{titlepage}
     \center % Center everything on the page
-    {\Large Zhejiang University / University of Illinois at Urbana-Champaign Institute} \\
     \vfill
     \textsc{\Large ECE 445}\\[0.5cm] % heading course Number
     \textsc{\Large Senior Design Laboratory}\\[0.5cm] % heading course name
@@ -172,7 +177,8 @@
     \begin{minipage}{0.5\textwidth}
       \begin{center}
         \large
-        \underline{TA}: \TANAME
+        \underline{TA}: \TANAME\\
+        \underline{Sponsor}: \FACULTYNAME
       \end{center}
     \end{minipage} \\[1cm]
     \vfill
@@ -186,8 +192,6 @@
   \def\RPTTYPE{\GRPTTYPE}
   \begin{titlepage}
     \center % Center everything on the page
-    {\Large Zhejiang University / University of Illinois at Urbana-Champaign Institute} \\
-    \vfill
     \textsc{\Large ECE 445}\\[0.5cm] % heading course Number
     \textsc{\Large Senior Design Laboratory}\\[0.5cm] % heading course name
     \textsc{\Large \GRPTTYPE}\\[0.5cm] % Minor heading
@@ -207,7 +211,8 @@
     \begin{minipage}{0.5\textwidth}
       \begin{center}
         \large
-        \underline{TA}: \TANAME
+        \underline{TA}: \TANAME\\
+        \underline{Sponsor}: \FACULTYNAME
       \end{center}
     \end{minipage} \\[1cm]
     \vfill

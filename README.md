@@ -2,10 +2,7 @@
 
 ZJUI毕业设计个人报告（Individual Report）的$\LaTeX$模板。
 
-## 初衷
-只是一个LaTeX爱好者想整点花活。ZJU主校区有自己的毕业设计LaTeX模板，ZJUI不能落下。
-
-慢慢来，做着看吧。
+基于[UIUC ECE445 Template](https://courses.grainger.illinois.edu/ece445zjui/documents/445_template.zip)和毕业设计个人报告要求（见BB）制作。
 
 ## 许可
 本模板（除`references.bib`和`commitment_v4.tex`中的所有内容）根据MIT协议开放源代码。
@@ -13,6 +10,8 @@ ZJUI毕业设计个人报告（Individual Report）的$\LaTeX$模板。
 `references.bib`中条目版权根据其所属数据库与作者的协议归数据库和/或作者所有。
 
 `commitment_v4.tex`中的所有内容来自浙江大学ZJU-UIUC联合学院通过ECE445: Senior Design Lab课程的Blackboard网站下发的`commitment_V4.pdf`文档。
+
+`sennior-design.cls`中Final Report和General Report的`titlepage`部分由UIUC ECE445 Template的封面修改而来。
 
 ## 用法
 本模板基于`book`类编写，默认使用a4paper纸张、11磅字（与院方下发模板一致），页边距2.54cm（约1英寸）。
@@ -27,6 +26,10 @@ ZJUI毕业设计个人报告（Individual Report）的$\LaTeX$模板。
 本仓库提供的一系列新命令列举如下：
 
 #### 报告信息类
+
+`\teammember{<中文名>}{<NameInEnglish>}{<Email>}`定义了**一条**组员信息。
+
+`\teammember{<NameInEnglish>}{<Email>}`定义了**一条**不含中文名的组员信息。
 
 `\reporttitle{<Title>}`定义项目的标题。标题将出现在封面填写项目名称的位置上。
 
