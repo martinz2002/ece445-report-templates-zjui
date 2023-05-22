@@ -30,8 +30,10 @@
 \renewcommand{\bibname}{References}
 \renewcommand\bibname{References}
 \RequirePackage[header, title, titletoc]{appendix}
-\RequirePackage{newtx}\defaultfontfeatures{}
 \RequirePackage[scheme=plain, fontset=fandol]{ctex} % In case you need to input Chinese characters
+\RequirePackage[T1]{fontenc}
+\RequirePackage{mathpazo}
+\RequirePackage{bm}
 \RequirePackage{titlesec}
 \RequirePackage{hyperref}
 \RequirePackage{xurl}
@@ -67,11 +69,11 @@
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \fancypagestyle{plain}{
-  \fancyhead[L]{\scriptsize\MakeUppercase{\RPTTYPE}}
-  \fancyhead[R]{\scriptsize\MakeUppercase{\leftmark}}
+  \fancyhead[L]{\small\MakeUppercase{\RPTTYPE}}
+  \fancyhead[R]{\small\MakeUppercase{\leftmark}}
   \fancyfoot[C]{\thepage}}
-\fancyhead[L]{\scriptsize\MakeUppercase{\RPTTYPE}}
-\fancyhead[R]{\scriptsize\MakeUppercase{\leftmark}}
+\fancyhead[L]{\small\MakeUppercase{\RPTTYPE}}
+\fancyhead[R]{\small\MakeUppercase{\leftmark}}
 \fancyfoot[C]{\thepage}
 
 \lstset{
@@ -120,14 +122,15 @@
 \newcommand\individualreportcover{
   \def\RPTTYPE{SENIOR DESIGN INDIVIDUAL REPORT}
   \begin{titlepage}
+    \newgeometry{left=1cm, right=1cm, top=1in, bottom=1in}
     \begin{center}
       ~~\\ % to make the vspace effective
       \vspace{1.5cm}
-      {\fontsize{15}{18.4}\selectfont Zhejiang University / University of Illinois Urbana-Champaign Institute}\\
+      {\fontsize{16}{24}\selectfont Zhejiang University / University of Illinois at Urbana-Champaign Institute}\\
       \vspace{1.88cm}
       {\fontsize{28}{42}\selectfont Senior Design Individual Report}\\
       \vspace{1.6cm}
-      \begin{minipage}{\linewidth}
+      \begin{minipage}{15.92cm}
         \centering
         \fontsize{28}{28}\selectfont
         \textbf{\MakeUppercase{\RPTTITLE}}
@@ -143,8 +146,10 @@
         TA: \TANAME}\\
       \vspace{1.2cm}
       {\fontsize{12}{18}\selectfont\RPTDATE\\\vspace{10pt}
-        Project No. \PROJECTNUMBER\\}
+        Project No. \PROJECTNUMBER\\[0.54cm]}
     \end{center}
+    ~
+    \restoregeometry
   \end{titlepage}
 }
 \newcommand\finalreportcover{
