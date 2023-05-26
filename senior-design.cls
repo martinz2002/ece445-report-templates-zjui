@@ -30,10 +30,9 @@
 \renewcommand{\bibname}{References}
 \renewcommand\bibname{References}
 \RequirePackage[header, title, titletoc]{appendix}
-\RequirePackage[scheme=plain, fontset=fandol]{ctex} % In case you need to input Chinese characters
-\RequirePackage[T1]{fontenc}
-\RequirePackage{mathpazo}
-\RequirePackage{bm}
+\RequirePackage[scheme=plain, fontset=fandol]{ctex}
+\RequirePackage{newpxtext}
+\RequirePackage{newpxmath}
 \RequirePackage{titlesec}
 \RequirePackage{hyperref}
 \RequirePackage{xurl}
