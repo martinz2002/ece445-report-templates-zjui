@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{senior-design}[2023-05-19 by Martin Zhong (zhongmartin@outlook.com) Template for ZJU-UIUC Senior Design Inividual Report]
 
-\LoadClass[a4paper,12pt,twoside,openany]{book}
+\LoadClass[a4paper,12pt,oneside]{book}
 
 \RequirePackage{booktabs}
 \RequirePackage{tabularx}
@@ -29,51 +29,56 @@
   {\printdate}}
 \renewcommand{\bibname}{References}
 \renewcommand\bibname{References}
-\RequirePackage[header, title, titletoc]{appendix}
+\RequirePackage{newtx}\defaultfontfeatures{}
 \RequirePackage[scheme=plain, fontset=fandol]{ctex}
-\RequirePackage{newpxtext}
-\RequirePackage{newpxmath}
 \RequirePackage{titlesec}
+\RequirePackage{titletoc}
 \RequirePackage{hyperref}
 \RequirePackage{xurl}
 \RequirePackage{setspace}
 \onehalfspacing
 
 \setenumerate[1]{
-  itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+  itemsep=1em,partopsep=0pt,parsep=\parskip,topsep=5pt}
 \setitemize[1]{
-  itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+  itemsep=1em,partopsep=0pt,parsep=\parskip,topsep=5pt}
 \setdescription{
-  itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+  itemsep=1em,partopsep=0pt,parsep=\parskip,topsep=5pt}
 \setlength{\topsep}{0ex} %列表到上下文的垂直距离
 
 \titleformat{\chapter}
-{\normalfont\LARGE\sc\bfseries}
-{\thechapter}{1.5em}{}
-\titlespacing{\chapter}{0pt}{0pt}{2em}
+{\fontsize{16pt}{\baselineskip}\selectfont\sc\bfseries}
+{\thechapter}{1em}{}
+\titlespacing{\chapter}{0pt}{0pt}{\baselineskip}
+\titlecontents{chapter}[1.5em]{}{\contentslabel{1.5em}}{\hspace{-1.5em}}{\titlerule*[10pt]{.}\contentspage}
 
 \titleformat{\section}
-{\normalfont\Large\bfseries}
+{\fontsize{14pt}{\baselineskip}\selectfont\bfseries}
 {\thesection}{1em}{}
+\titlecontents{section}[2.2em]{}{\contentslabel{2.2em}}{\hspace{-3.2em}}{\titlerule*[10pt]{.}\contentspage}
 
 \titleformat{\subsection}
-{\normalfont\large\bfseries}
+{\normalsize\bfseries}
 {\thesubsection}{1em}{}
+\titlecontents{subsection}[3.0em]{}{\contentslabel{3.0em}}{\hspace{-5.0em}}{\titlerule*[10pt]{.}\contentspage}
 
 \titleformat{\subsubsection}
-{\normalfont\bfseries}
+{\normalsize\bfseries}
 {\thesubsubsection}{1em}{}
 
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \fancypagestyle{plain}{
-  \fancyhead[L]{\small\MakeUppercase{\RPTTYPE}}
-  \fancyhead[R]{\small\MakeUppercase{\leftmark}}
-  \fancyfoot[C]{\thepage}}
-\fancyhead[L]{\small\MakeUppercase{\RPTTYPE}}
-\fancyhead[R]{\small\MakeUppercase{\leftmark}}
-\fancyfoot[C]{\thepage}
+  \fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase\RPTTYPE}
+  \fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase\leftmark}
+  \fancyfoot[C]{--\thepage--}}
+\fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase\RPTTYPE}
+\fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase\leftmark}
+\fancyfoot[C]{--\thepage--}
+
+\newfontfamily\individualCoverFont{Calibri}
+\newfontfamily\individualProjectTitleFont{Cambria}
 
 \lstset{
   basicstyle=\small\ttfamily,
@@ -86,7 +91,6 @@
   commentstyle=\itshape\color{ForestGreen},
   keywordstyle=\color{Blue}\bfseries,
 }
-\linespread{1.15}
 \newcommand\reporttitle[1]{\def\RPTTITLE{#1}}
 \newcommand\reportdate[1]{\def\RPTDATE{#1}}
 \newcommand\authornames[1]{\def\AUTHORNAME{#1}}
@@ -119,25 +123,23 @@
 \def\PROJECTNUMBER{Number of the project}
 \def\TEAMNUMBER{Number of your team}
 \newcommand\individualreportcover{
-  \def\RPTTYPE{SENIOR DESIGN INDIVIDUAL REPORT}
+  \def\RPTTYPE{Senior Design Individual Report}
   \begin{titlepage}
     \newgeometry{left=1cm, right=1cm, top=1in, bottom=1in}
     \begin{center}
       ~~\\ % to make the vspace effective
       \vspace{1.5cm}
-      {\fontsize{16}{24}\selectfont Zhejiang University / University of Illinois at Urbana-Champaign Institute}\\
+      {\fontsize{16}{24}\selectfont Zhejiang University / University of Illinois Urbana-Champaign Institute}\\
       \vspace{1.88cm}
       {\fontsize{28}{42}\selectfont Senior Design Individual Report}\\
       \vspace{1.6cm}
       \begin{minipage}{15.92cm}
         \centering
-        \fontsize{28}{28}\selectfont
-        \textbf{\MakeUppercase{\RPTTITLE}}
-      \end{minipage}\\
-      \vspace{1cm}
-      {\fontsize{13}{19.5}\selectfont By}\\
-      \vspace{1cm}
-      {\fontsize{13}{19.5}\selectfont\AUTHORNAME}
+        \fontsize{26}{26}\selectfont
+        \MakeUppercase{\RPTTITLE}
+      \end{minipage}\\[2cm]
+      {\fontsize{14}{21}\selectfont By}\\[1.5em]
+      {\fontsize{14}{21}\selectfont\AUTHORNAME}
 
       \vfill
       {\fontsize{12}{18}\selectfont \SEMESTER\\\vspace{10pt}
@@ -147,9 +149,11 @@
       {\fontsize{12}{18}\selectfont\RPTDATE\\\vspace{10pt}
         Project No. \PROJECTNUMBER\\[0.54cm]}
     \end{center}
+    \vspace{1.5cm}
     ~
     \restoregeometry
   \end{titlepage}
+
 }
 \newcommand\finalreportcover{
   \def\RPTTYPE{Final Report}

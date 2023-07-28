@@ -2,15 +2,13 @@
 \usepackage{lipsum}
 
 %%% Report information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\reporttitle{A Sample for Individual Report}
+\reporttitle{The name of your project will be put in this place}
 % \reporttype{Some types} % Uncomment this line if you want to use \generalreportcover
 \semester{Spring 2023}
 \sponsor{The name of your sponsor}
 \ta{The name of your TA}
 \reportdate{The date of the report}
-\authornames{
-    \teammember{张\quad 三}{San Zhang}{sanz0@illinois.edu}
-}
+\authornames{李云龙\quad Yunlong Li}
 \addbibresource{references.bib} % The bib database
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -30,10 +28,10 @@
 
 %%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Abstract}
-% Put your abstract here
-\lipsum[1-3]
+Put your abstract here
+
 \paragraph{Keywords}
-% Put keywords here
+% Put keywords below
 Keyword 1, keyword 2, keyword 3
 %%% TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents
@@ -42,32 +40,19 @@ Keyword 1, keyword 2, keyword 3
 
 %%% Body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Introduction}
-% Replace the following stuff with your own
-This is a sample citation \cite{haynes1949}.
+\section{Problem statement}
+\lipsum
+\section{Importance}
 
-Another sample citation will cite \textcite{LiGongTanYuanQiJian} as an example for citing a webpage.
-
-\lipsum[1-10]
-
-\chapter{Literature Review}
-% Replace the following stuff with your own
-\lipsum[11-40]
+\section{Literature Review}
 
 \chapter{Methodology}
-% Replace the following stuff with your own
-\lipsum[2-30]
 
 \chapter{Results}
-% Replace the following stuff with your own
-\lipsum[31-40]
 
 \chapter{Discussion}
-% Replace the following stuff with your own
-\lipsum[41-50]
 
 \chapter{Conclusion}
-% Replace the following stuff with your own
-\lipsum[51-60]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -77,26 +62,16 @@ Another sample citation will cite \textcite{LiGongTanYuanQiJian} as an example f
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% Appendices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\titleformat{\chapter}
-{\normalfont\LARGE\sc\bfseries}
-{Appendix \thechapter}{1.5em}{}
-\titlespacing{\chapter}{0pt}{0pt}{2em}
-\begin{appendices}
+\appendix
 % Put all appendices here
-\chapter{An Example Appendix}
-% Replace the following stuff with your own appendix
-\lipsum[61-70]
+\chapter{An Appendix}
 
-\chapter{Another Example Appendix}
-% Replace the following stuff with your own appendix
-\lipsum[71-80]
+\chapter{Another Appendix}
 
-\end{appendices}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \backmatter
 %%% Acknowledgement %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Acknowledgement}
-% Replace the following line with your own acknowledgement
-\lipsum[81-90]
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
