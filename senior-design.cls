@@ -30,7 +30,7 @@
 \renewcommand{\bibname}{References}
 \renewcommand\bibname{References}
 \RequirePackage{newtx}\defaultfontfeatures{}
-\RequirePackage[scheme=plain, fontset=fandol]{ctex}
+\RequirePackage[scheme=plain]{ctex}
 \RequirePackage{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage{hyperref}
@@ -129,7 +129,7 @@
     \begin{center}
       ~~\\ % to make the vspace effective
       \vspace{1.5cm}
-      {\fontsize{16}{24}\selectfont Zhejiang University / University of Illinois Urbana-Champaign Institute}\\
+      {\fontsize{16}{24}\selectfont Zhejiang University/University of Illinois Urbana-Champaign Institute}\\
       \vspace{1.88cm}
       {\fontsize{28}{42}\selectfont Senior Design Individual Report}\\
       \vspace{1.6cm}
