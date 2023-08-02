@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{senior-design}[2023-05-19 by Martin Zhong (zhongmartin@outlook.com) Template for ZJU-UIUC Senior Design Inividual Report]
+\ProvidesClass{senior-design}[2023-08-02 by Martin Zhong (zhongmartin@outlook.com) Template for ZJU-UIUC Senior Design Inividual Report]
 
 \LoadClass[a4paper,12pt,oneside]{book}
 
@@ -29,13 +29,16 @@
   {\printdate}}
 \renewcommand{\bibname}{References}
 \renewcommand\bibname{References}
-\RequirePackage{newtx}\defaultfontfeatures{}
-\RequirePackage[scheme=plain]{ctex}
+\RequirePackage[scheme=plain, fontset=fandol]{ctex}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{mathptmx}
 \RequirePackage{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage{hyperref}
 \RequirePackage{xurl}
 \RequirePackage{setspace}
+\RequirePackage[per-mode=symbol,inter-unit-product = \ensuremath{{}\cdot{}},mode=math]{siunitx}
+\DeclareSIPrefix\micro{\text{\textmu}}{-3} % SI单位
 \onehalfspacing
 
 \setenumerate[1]{
@@ -76,9 +79,6 @@
 \fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase\RPTTYPE}
 \fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase\leftmark}
 \fancyfoot[C]{--\thepage--}
-
-\newfontfamily\individualCoverFont{Calibri}
-\newfontfamily\individualProjectTitleFont{Cambria}
 
 \lstset{
   basicstyle=\small\ttfamily,
@@ -125,27 +125,30 @@
 \newcommand\individualreportcover{
   \def\RPTTYPE{Senior Design Individual Report}
   \begin{titlepage}
+    % \individualCoverFont
     \newgeometry{left=1cm, right=1cm, top=1in, bottom=1in}
     \begin{center}
       ~~\\ % to make the vspace effective
       \vspace{1.5cm}
-      {\fontsize{16}{24}\selectfont Zhejiang University/University of Illinois Urbana-Champaign Institute}\\
+      {\fontsize{16}{24}\selectfont Zhejiang University / University of Illinois Urbana-Champaign Institute}\\
       \vspace{1.88cm}
       {\fontsize{28}{42}\selectfont Senior Design Individual Report}\\
       \vspace{1.6cm}
       \begin{minipage}{15.92cm}
         \centering
         \fontsize{26}{26}\selectfont
-        \MakeUppercase{\RPTTITLE}
+        \MakeUppercase{\RPTTITLE}\\
+        \vspace{-0.8em}
+        \noindent\rule{\textwidth}{.5pt}
       \end{minipage}\\[2cm]
       {\fontsize{14}{21}\selectfont By}\\[1.5em]
-      {\fontsize{14}{21}\selectfont\AUTHORNAME}
+      {\fontsize{16}{24}\selectfont\AUTHORNAME}
 
       \vfill
-      {\fontsize{12}{18}\selectfont \SEMESTER\\\vspace{10pt}
+      {\fontsize{12}{18}\selectfont Individual Report for Senior Design, \SEMESTER\\\vspace{10pt}
         Sponsor: \FACULTYNAME\\\vspace{13pt}
         TA: \TANAME}\\
-      \vspace{1.2cm}
+      \vfill
       {\fontsize{12}{18}\selectfont\RPTDATE\\\vspace{10pt}
         Project No. \PROJECTNUMBER\\[0.54cm]}
     \end{center}
