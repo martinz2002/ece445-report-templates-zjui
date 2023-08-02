@@ -31,7 +31,7 @@
 \renewcommand\bibname{References}
 \RequirePackage[scheme=plain, fontset=fandol]{ctex}
 \RequirePackage[T1]{fontenc}
-\RequirePackage{mathptmx}
+\RequirePackage{mathpazo}
 \RequirePackage{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage{hyperref}
