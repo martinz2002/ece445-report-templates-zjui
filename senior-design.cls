@@ -58,12 +58,10 @@
 \titleformat{\section}
 {\fontsize{14pt}{\baselineskip}\selectfont\bfseries}
 {\thesection}{1em}{}
-\titlecontents{section}[2.2em]{}{\contentslabel{2.2em}}{\hspace{-3.2em}}{\titlerule*[10pt]{.}\contentspage}
 
 \titleformat{\subsection}
 {\normalsize\bfseries}
 {\thesubsection}{1em}{}
-\titlecontents{subsection}[3.0em]{}{\contentslabel{3.0em}}{\hspace{-5.0em}}{\titlerule*[10pt]{.}\contentspage}
 
 \titleformat{\subsubsection}
 {\normalsize\bfseries}
