@@ -9,7 +9,7 @@
 \RequirePackage{indentfirst}
 \RequirePackage{fancyhdr}
 \RequirePackage{graphicx}
-\RequirePackage{caption}
+\RequirePackage[format=hang,font={small},labelfont={bf},labelsep={quad}]{caption}
 \RequirePackage{amsmath, amssymb, amsfonts}  % for math spacing
 \RequirePackage[margin=1in]{geometry} % page layout 1' margin
 \RequirePackage{enumitem}
@@ -30,15 +30,12 @@
 \renewcommand{\bibname}{References}
 \renewcommand\bibname{References}
 \RequirePackage[scheme=plain, fontset=fandol]{ctex}
-\RequirePackage[T1]{fontenc}
-\RequirePackage{mathpazo}
 \RequirePackage{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage{hyperref}
 \RequirePackage{xurl}
 \RequirePackage{setspace}
 \RequirePackage[per-mode=symbol,inter-unit-product = \ensuremath{{}\cdot{}},mode=math]{siunitx}
-\DeclareSIPrefix\micro{\text{\textmu}}{-3} % SI单位
 \onehalfspacing
 
 \setenumerate[1]{
@@ -50,7 +47,7 @@
 \setlength{\topsep}{0ex} %列表到上下文的垂直距离
 
 \titleformat{\chapter}
-{\fontsize{16pt}{\baselineskip}\selectfont\sc\bfseries}
+{\fontsize{16pt}{\baselineskip}\selectfont\bfseries}
 {\thechapter}{1em}{}
 \titlespacing{\chapter}{0pt}{0pt}{\baselineskip}
 \titlecontents{chapter}[1.5em]{}{\contentslabel{1.5em}}{\hspace{-1.5em}}{\titlerule*[10pt]{.}\contentspage}
@@ -108,6 +105,8 @@
   \textbf{#1}\\%name
   \href{mailto:#2}{#2}%Email
 }
+\newcommand\name[2]{#1~\textsc{#2}}
+\newcommand\namech[3]{#1~\textsc{#2}~(#3)}
 \def\RPTTYPE{Type of the report}
 \def\ABSTRACTCONTENT{You did not specify the content of abstract.}
 \def\ACKNOWLEDGEMENTCONTENT{You did not specify the content of acknowledgement.}
@@ -123,7 +122,6 @@
 \newcommand\individualreportcover{
   \def\RPTTYPE{Senior Design Individual Report}
   \begin{titlepage}
-    % \individualCoverFont
     \newgeometry{left=1cm, right=1cm, top=1in, bottom=1in}
     \begin{center}
       ~~\\ % to make the vspace effective
@@ -135,7 +133,7 @@
       \begin{minipage}{15.92cm}
         \centering
         \fontsize{26}{26}\selectfont
-        \MakeUppercase{\RPTTITLE}\\
+        \MakeUppercase{\bf\RPTTITLE}\\
         \vspace{-0.8em}
         \noindent\rule{\textwidth}{.5pt}
       \end{minipage}\\[2cm]
