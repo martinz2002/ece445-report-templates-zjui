@@ -29,13 +29,16 @@
   {\printdate}}
 \renewcommand{\bibname}{References}
 \renewcommand\bibname{References}
-\RequirePackage[scheme=plain, fontset=fandol]{ctex}
+\RequirePackage[scheme=plain]{ctex}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{mathptmx}
 \RequirePackage{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage{hyperref}
 \RequirePackage{xurl}
 \RequirePackage{setspace}
 \RequirePackage[per-mode=symbol,inter-unit-product = \ensuremath{{}\cdot{}},mode=math]{siunitx}
+\DeclareSIPrefix\micro{\text{\textmu}}{-3} % typing SI Units, not necessary for default LMC font
 \onehalfspacing
 
 \setenumerate[1]{
@@ -50,7 +53,6 @@
 {\fontsize{16pt}{\baselineskip}\selectfont\bfseries}
 {\thechapter}{1em}{}
 \titlespacing{\chapter}{0pt}{0pt}{\baselineskip}
-\titlecontents{chapter}[1.5em]{}{\contentslabel{1.5em}}{\hspace{-1.5em}}{\titlerule*[10pt]{.}\contentspage}
 
 \titleformat{\section}
 {\fontsize{14pt}{\baselineskip}\selectfont\bfseries}
@@ -96,17 +98,15 @@
 \newcommand\teamnumber[1]{\def\TEAMNUMBER{#1}}
 \newcommand{\HRule}{\rule{\linewidth}{0.1mm}}
 \newcommand\reporttype[1]{\def\GRPTTYPE{#1}}
-\newcommand\teammember[3]{
-  \textbf{#1}\quad%Chinese name
-  \textbf{#2}\\%English name
+\newcommand\teammember[3]{%For those don't have English name
+  {#1~\textsc{#2}}\\%name
   \href{mailto:#3}{#3}%Email
 }
-\newcommand\teammemberenglish[2]{%For those don't have English name
-  \textbf{#1}\\%name
-  \href{mailto:#2}{#2}%Email
+\newcommand\nameid[3]{%For those don't have English name
+  {#1~\textsc{#2}}\\%name
+  {#3}%Student ID
 }
 \newcommand\name[2]{#1~\textsc{#2}}
-\newcommand\namech[3]{#1~\textsc{#2}~(#3)}
 \def\RPTTYPE{Type of the report}
 \def\ABSTRACTCONTENT{You did not specify the content of abstract.}
 \def\ACKNOWLEDGEMENTCONTENT{You did not specify the content of acknowledgement.}
@@ -133,8 +133,7 @@
       \begin{minipage}{15.92cm}
         \centering
         \fontsize{26}{26}\selectfont
-        \MakeUppercase{\bf\RPTTITLE}\\
-        \vspace{-0.8em}
+        \MakeUppercase{\bf\RPTTITLE}\\[-.5cm]
         \noindent\rule{\textwidth}{.5pt}
       \end{minipage}\\[2cm]
       {\fontsize{14}{21}\selectfont By}\\[1.5em]
@@ -166,26 +165,16 @@
     \vfill
     \HRule \\[0.5cm]
     \huge \textbf{\MakeUppercase{\RPTTITLE}} % Title
-    \HRule \\[2cm]
+    \HRule \\
     \vfill
-    \begin{minipage}{0.5\textwidth}
-      \begin{center} \large
-        \underline{\textbf{Team \#\TEAMNUMBER}} \\ \medskip
-        \AUTHORNAME
-      \end{center}
-    \end{minipage} \\[1.5cm]
-
-    \begin{minipage}{0.5\textwidth}
-      \begin{center}
-        \large
-        \underline{TA}: \TANAME\\
-        \underline{Sponsor}: \FACULTYNAME
-      \end{center}
-    \end{minipage} \\[1cm]
+    \begin{center} \large
+      \underline{\textbf{Team \#\TEAMNUMBER}} \\ \medskip
+      \AUTHORNAME\\ \vspace{2em}
+      \underline{\bf TA}: \TANAME\\
+      \underline{\bf Sponsor}: \FACULTYNAME
+    \end{center}
     \vfill
     {\large \RPTDATE} % Date
-
-    \vfill % Fill the rest of the page with white-space
 
   \end{titlepage}
 }
@@ -200,26 +189,16 @@
     \vfill
     \HRule \\[0.5cm]
     \huge \textbf{\MakeUppercase{\RPTTITLE}} % Title
-    \HRule \\[2cm]
+    \HRule \\
     \vfill
-    \begin{minipage}{0.5\textwidth}
-      \begin{center} \large
-        \underline{\textbf{Team \#\TEAMNUMBER}} \\ \medskip
-        \AUTHORNAME
-      \end{center}
-    \end{minipage} \\[1.5cm]
-
-    \begin{minipage}{0.5\textwidth}
-      \begin{center}
-        \large
-        \underline{TA}: \TANAME\\
-        \underline{Sponsor}: \FACULTYNAME
-      \end{center}
-    \end{minipage} \\[1cm]
+    \begin{center} \large
+      \underline{\textbf{Team \#\TEAMNUMBER}} \\ \medskip
+      \AUTHORNAME\\ \vspace{2em}
+      \underline{\bf TA}: \TANAME\\
+      \underline{\bf Sponsor}: \FACULTYNAME
+    \end{center}
     \vfill
     {\large \RPTDATE} % Date
-
-    \vfill % Fill the rest of the page with white-space
 
   \end{titlepage}
 }

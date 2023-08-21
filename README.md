@@ -27,9 +27,11 @@ ZJUI毕业设计个人报告（Individual Report）的$\LaTeX$模板。
 
 #### 报告信息类
 
-`\teammember{<中文名>}{<NameInEnglish>}{<Email>}`用于生成**一条**组员信息。若需要组员信息显示在封面上，需结合`\authornames`命令使用。
+`\teammember{<FirstName>}{<LastName>}{<Email>}`用于生成**一条**带邮箱地址的组员信息。若需要组员信息显示在封面上，需结合`\authornames`命令使用。
 
-`\teammemberenglish{<NameInEnglish>}{<Email>}`用于生成**一条**不含中文名的组员信息。若需要组员信息显示在封面上，需结合`\authornames`命令使用。
+`\name{<FirstName>}{<LastName>}`用于排版**一个**姓名。若需要组员信息显示在封面上，需结合`\authornames`命令使用。
+
+`\nameid{<FirstName>}{<LastName>}{<StudentID>}`用于排版**一个**带学号的姓名。若需要组员信息显示在封面上，需结合`\authornames`命令使用。
 
 `\authornames{<ListOfMembers>}`定义了需要**显示在封面上**的组员信息。
 
