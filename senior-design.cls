@@ -30,8 +30,6 @@
 \renewcommand{\bibname}{References}
 \renewcommand\bibname{References}
 \RequirePackage[scheme=plain]{ctex}
-\RequirePackage[T1]{fontenc}
-\RequirePackage{mathptmx}
 \RequirePackage{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage{hyperref}
