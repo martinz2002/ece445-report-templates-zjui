@@ -1,20 +1,15 @@
-# Individual Report Template for ZJU-UIUC ECE 445: Senior Design Project Lab
+# A Set of Templates for All Reports Required by ECE 445 at ZJUI
 
-ZJUI毕业设计个人报告（Individual Report）的$\LaTeX$模板。
+ZJUI毕业设计课程所有报告（包含毕设个人报告（i.e. 毕设论文）、小组Final Report）的$\LaTeX$模板。
 
 基于[UIUC ECE445 Template](https://courses.grainger.illinois.edu/ece445zjui/documents/445_template.zip)和毕业设计个人报告要求（见BB）制作。
 
 ## 许可
-本模板（除`references.bib`和`commitment_v4.tex`中的所有内容）根据MIT协议开放源代码。
 
-`references.bib`中条目版权根据其所属数据库与作者的协议归数据库和/或作者所有。
-
-`commitment_v4.tex`中的所有内容来自浙江大学ZJU-UIUC联合学院通过ECE445: Senior Design Lab课程的Blackboard网站下发的`commitment_V4.pdf`文档。
-
-`sennior-design.cls`中Final Report和General Report的`titlepage`部分由UIUC ECE445 Template的封面修改而来。
+`sennior-design.cls`按LPPL许可证进行分发。
 
 ## 用法
-本模板基于`book`类编写，默认使用a4paper纸张、12磅字，页边距2.54cm（约1英寸）。
+本模板基于`book`类编写，默认使用A4尺寸、12磅字，页边距2.54cm（约1英寸）。
 
 ### $\LaTeX$基本语法
 可参考：[Learn LaTeX in 30 minutes - Overleaf, Online LaTeX Editor](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
@@ -72,134 +67,7 @@ BetterBibTeX的使用说明：[Better BibTeX for Zotero :: Better BibTeX for Zot
 
 ### 查看成品：编译
 
-由于模板采用了BibLaTeX作为引文工具，您需要特别注意编译过程。限于笔者精力，详细信息不在此放出（主要原因是我也不会直接用命令行编译……）。如果您不了解具体如何编译，笔者建议您采用以下两种方案：
-
-1. 采用在线$\LaTeX$编辑平台，如Overleaf。这类平台能自动处理如文献引用、图片编号等交叉引用的问题。（其后端应该是采用了`latexmk`的编译方式）
-
-2. **在您本地使用微软Visual Studio Code软件+相应插件**：到VSCode的Marketplace下载插件"LaTeX Workshop"，并在设置中找到“Latex-workshop > Latex: Recipes”项，点击“在 settings.json 中编辑”，删除原有`"latex-workshop.latex.tools"`和`""latex-workshop.latex.recipes"`项的内容，并将以下内容复制到您的`settings.json`文件中：
-
-   ```json
-   "latex-workshop.latex.tools": [
-       {
-           "name": "xelatex",
-           "command": "xelatex",
-           "args": [
-               "-synctex=1",
-               "-interaction=nonstopmode",
-               "-file-line-error",
-               "%DOCFILE%"
-           ]
-       },
-       {
-           "name": "latexmk-lua",
-           "command": "latexmk",
-           "args": [
-               "-lualatex",
-               "-synctex=1",
-               "-file-line-error",
-               "-interaction=nonstopmode",
-               "%DOCFILE%"
-           ]
-       },
-       {
-           "name": "pdflatex",
-           "command": "pdflatex",
-           "args": [
-               "-synctex=1",
-               "-interaction=nonstopmode",
-               "-file-line-error",
-               "%DOCFILE%"
-           ]
-       },
-       {
-           "name": "lualatex",
-           "command": "lualatex",
-           "args": [
-               "-synctex=1",
-               "-interaction=nonstopmode",
-               "-file-line-error",
-               "%DOCFILE%"
-           ]
-       },
-       {
-           "name": "bibtex",
-           "command": "bibtex",
-           "args": [
-               "%DOCFILE%"
-           ]
-       },
-       {
-           "name": "latexmk-clean",
-           "command": "latexmk",
-           "args": [
-               "-c"
-           ]
-       }
-   ],
-   "latex-workshop.latex.recipes": [
-       {
-           "name": "latexmk-lua",
-           "tools": [
-               "latexmk-lua"
-           ],
-       },
-       {
-           "name": "lualatex",
-           "tools": [
-               "lualatex"
-           ],
-       }
-       {
-           "name": "lua->bib->lua->lua",
-           "tools": [
-               "lualatex",
-               "bibtex",
-               "lualatex",
-               "lualatex"
-           ]
-       },
-       {
-           "name": "xelatex",
-           "tools": [
-               "xelatex"
-           ],
-       },
-       {
-           "name": "xe->bib->xe->xe",
-           "tools": [
-               "xelatex",
-               "bibtex",
-               "xelatex",
-               "xelatex"
-           ]
-       },
-       {
-           "name": "pdflatex",
-           "tools": [
-               "pdflatex"
-           ]
-       },
-       {
-           "name": "pdf->bib->pdf->pdf",
-           "tools": [
-               "pdflatex",
-               "bibtex",
-               "pdflatex",
-               "pdflatex"
-           ]
-       }
-   ], // 若本行后无设置项，则将逗号删除
-   ```
-
-   随后点击左边栏的“TEX”按钮，展开“Build LaTeX project”项，您将看到：
-
-   <img src="./README.assets/image-20230417192931167.png" alt="image-20230417192931167" style="zoom: 80%;" />
-
-   通常我们使用"xe->bib->xe->xe"，或"lua->bib->lua->lua"，或"latexmk-lua"项进行编译。**使用pdflatex或“pdf->bib->pdf->pdf”编译可能导致意外错误，这不是BUG，是一些宏包的特性！**部分宏包只能使用Xe$\TeX$或Lua$\TeX$正常编译。
-
-LaTeX Workshop插件的使用说明：[Home · James-Yu/LaTeX-Workshop Wiki (github.com)](https://github.com/James-Yu/LaTeX-Workshop/wiki)
-
-微软Visual Studio Code的使用说明：[Documentation for Visual Studio Code](https://code.visualstudio.com/Docs)
+使用"xe->biber->xe->xe"，或"lua->biber->lua->lua"。
 
 ## 联系我
 Email: zhongmartin@outlook.com
