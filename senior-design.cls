@@ -18,7 +18,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{senior-design}[2023-08-02 by Martin Zhong (zhongmartin@outlook.com) Template for ZJU-UIUC Senior Design Inividual Report]
 
-\LoadClass[a4paper,12pt,oneside]{book}
+\LoadClass[a4paper,11pt,oneside]{article}
 
 \RequirePackage{booktabs}
 \RequirePackage{tabularx}
@@ -40,13 +40,13 @@
 \RequirePackage{anyfontsize}
 \RequirePackage{csquotes}
 \RequirePackage[style=ieee]{biblatex}
+\RequirePackage[title]{appendix}
 \renewbibmacro*{date}{%
   \iffieldundef{year}
   {\bibstring{nodate}}
   {\printdate}}
-\renewcommand{\bibname}{References}
-\renewcommand\bibname{References}
-\RequirePackage[scheme=plain]{ctex}
+\RequirePackage[nott]{newtx}
+\RequirePackage[scheme=plain, fontset=fandol]{ctex}\defaultfontfeatures{}
 \RequirePackage{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage{hyperref}
@@ -55,7 +55,6 @@
 \RequirePackage[per-mode=symbol,inter-unit-product = \ensuremath{{}\cdot{}},mode=math]{siunitx}
 \DeclareSIPrefix\micro{\text{\textmu}}{-3} % typing SI Units, not necessary for default LMC font
 \onehalfspacing
-
 \setenumerate[1]{
   itemsep=1em,partopsep=0pt,parsep=\parskip,topsep=5pt}
 \setitemize[1]{
@@ -63,35 +62,17 @@
 \setdescription{
   itemsep=1em,partopsep=0pt,parsep=\parskip,topsep=5pt}
 \setlength{\topsep}{0ex} %列表到上下文的垂直距离
-
-\titleformat{\chapter}
-{\fontsize{16pt}{\baselineskip}\selectfont\bfseries}
-{\thechapter}{1em}{}
-\titlespacing{\chapter}{0pt}{0pt}{\baselineskip}
-
-\titleformat{\section}
-{\fontsize{14pt}{\baselineskip}\selectfont\bfseries}
-{\thesection}{1em}{}
-
-\titleformat{\subsection}
-{\normalsize\bfseries}
-{\thesubsection}{1em}{}
-
-\titleformat{\subsubsection}
-{\normalsize\bfseries}
-{\thesubsubsection}{1em}{}
-
+\setlength{\parindent}{2em}
+\setlength{\headheight}{14pt}
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \fancypagestyle{plain}{
-  \fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase\RPTTYPE}
-  \fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase\leftmark}
-  \fancyfoot[C]{--\thepage--}}
-\fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase\RPTTYPE}
-\fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase\leftmark}
-\fancyfoot[C]{--\thepage--}
-
+  \fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont ECE 445: Senior Design Laboratory}
+  \fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\MakeCapital{\RPTTYPE}}
+  \fancyfoot[C]{\thepage}}
+\fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont ECE 445: Senior Design Laboratory}
+\fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\MakeCapital{\RPTTYPE}}
+\fancyfoot[C]{\thepage}
 \lstset{
   basicstyle=\small\ttfamily,
   numbers=left,
@@ -101,7 +82,8 @@
   columns=fixed,
   keepspaces,
   commentstyle=\itshape\color{ForestGreen},
-  keywordstyle=\color{Blue}\bfseries,
+  keywordstyle=\bfseries\color{Blue},
+  frame=single
 }
 \newcommand\reporttitle[1]{\def\RPTTITLE{#1}}
 \newcommand\reportdate[1]{\def\RPTDATE{#1}}
@@ -113,13 +95,13 @@
 \newcommand\teamnumber[1]{\def\TEAMNUMBER{#1}}
 \newcommand{\HRule}{\rule{\linewidth}{0.1mm}}
 \newcommand\reporttype[1]{\def\GRPTTYPE{#1}}
-\newcommand\teammember[3]{%For those don't have English name
+\newcommand\nameemail[3]{
   {#1~\textsc{#2}}\\%name
   \href{mailto:#3}{#3}%Email
 }
-\newcommand\nameid[3]{%For those don't have English name
-  {#1~\textsc{#2}}\\%name
-  {#3}%Student ID
+\newcommand\nameid[3]{
+{#1~\textsc{#2}}\\%name
+{#3}%Student ID
 }
 \newcommand\name[2]{#1~\textsc{#2}}
 \def\RPTTYPE{Type of the report}
@@ -148,8 +130,7 @@
       \begin{minipage}{15.92cm}
         \centering
         \fontsize{26}{26}\selectfont
-        \MakeUppercase{\bf\RPTTITLE}\\[-.5cm]
-        \noindent\rule{\textwidth}{.5pt}
+        \MakeUppercase{\bf\RPTTITLE}
       \end{minipage}\\[2cm]
       {\fontsize{14}{21}\selectfont By}\\[1.5em]
       {\fontsize{16}{24}\selectfont\AUTHORNAME}
@@ -167,31 +148,6 @@
     \restoregeometry
   \end{titlepage}
 
-}
-\newcommand\finalreportcover{
-  \def\RPTTYPE{Final Report}
-  \begin{titlepage}
-    \center % Center everything on the page
-    \vfill
-    \textsc{\Large ECE 445}\\[0.5cm] % heading course Number
-    \textsc{\Large Senior Design Laboratory}\\[0.5cm] % heading course name
-    \textsc{\Large Final Report}\\[0.5cm] % Minor heading
-    {\Large\underline{Project \#\PROJECTNUMBER}}
-    \vfill
-    \HRule \\[0.5cm]
-    \huge \textbf{\MakeUppercase{\RPTTITLE}} % Title
-    \HRule \\
-    \vfill
-    \begin{center} \large
-      \underline{\textbf{Team \#\TEAMNUMBER}} \\ \medskip
-      \AUTHORNAME\\ \vspace{2em}
-      \underline{\bf TA}: \TANAME\\
-      \underline{\bf Sponsor}: \FACULTYNAME
-    \end{center}
-    \vfill
-    {\large \RPTDATE} % Date
-
-  \end{titlepage}
 }
 \newcommand\generalreportcover{
   \def\RPTTYPE{\GRPTTYPE}
