@@ -59,7 +59,7 @@
 
 % Fonts
 \setmonofont{Consolas}
-\setsansfont{Calibri}
+\setsansfont{Arial}
 \RequirePackage{newtxtext}
 \RequirePackage{newtxmath}
 
@@ -106,7 +106,7 @@
 
 % Listings
 \lstset{
-  basicstyle=\small\ttfamily,
+  basicstyle=\fontsize{10pt}{1em}\selectfont\ttfamily,
   numbers=left,
   numberstyle=\scriptsize,
   tabsize=4,
@@ -173,14 +173,16 @@
       {\fontsize{16}{24}\selectfont\AUTHORNAME}
 
       \vfill
-      {\fontsize{12}{18}\selectfont Individual Report for Senior Design, \SEMESTER\\\vspace{10pt}
-        Sponsor: \FACULTYNAME\\\vspace{13pt}
-        TA: \TANAME}\\
-      \vfill
-      {\fontsize{12}{18}\selectfont\RPTDATE\\\vspace{10pt}
-        Project No. \PROJECTNUMBER\\[0.54cm]}
+      {\fontsize{12}{\baselineskip}\selectfont Individual Report for Senior Design, \SEMESTER\\
+        \begin{tabular}{rl}
+          Sponsor: & \hspace{-.5em}\FACULTYNAME \\
+          TA:      & \hspace{-.5em}\TANAME
+        \end{tabular}
+        \vfill}
+      {\fontsize{12}{18}\selectfont\RPTDATE\\
+        Project No. \PROJECTNUMBER}
     \end{center}
-    \vspace{1.5cm}
+    \vspace{2cm}
     ~
     \restoregeometry
   \end{titlepage}
@@ -188,6 +190,7 @@
 \newcommand\generalreportcover{
   \def\RPTTYPE{\GRPTTYPE}
   \begin{titlepage}
+    \sf
     \center % Center everything on the page
     \textsc{\Large ECE 445}\\[0.5cm] % heading course Number
     \textsc{\Large Senior Design Laboratory}\\[0.5cm] % heading course name
@@ -201,8 +204,10 @@
     \begin{center} \large
       \underline{\textbf{Team \#\TEAMNUMBER}} \\ \medskip
       \AUTHORNAME\\ \vspace{2em}
-      \underline{\bf TA}: \TANAME\\
-      \underline{\bf Sponsor}: \FACULTYNAME
+      \begin{tabular}{rl}
+        \underline{\textbf{TA}}:      & \hspace{-.5em}\TANAME      \\
+        \underline{\textbf{Sponsor}}: & \hspace{-.5em}\FACULTYNAME
+      \end{tabular}
     \end{center}
     \vfill
     {\large \RPTDATE} % Date
