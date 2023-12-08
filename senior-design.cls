@@ -18,7 +18,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{senior-design}[2023-08-02 by Martin Zhong (zhongmartin@outlook.com) Template for ZJU-UIUC Senior Design Inividual Report]
 
-\LoadClass[a4paper,11pt,oneside]{article}
+\LoadClass[a4paper,11pt,oneside]{book}
 
 \RequirePackage{booktabs}
 \RequirePackage{tabularx}
@@ -41,6 +41,7 @@
 \RequirePackage{csquotes}
 \RequirePackage[style=ieee]{biblatex}
 \RequirePackage[title]{appendix}
+\renewcommand{\appendixname}{Appendix}
 \renewbibmacro*{date}{%
   \iffieldundef{year}
   {\bibstring{nodate}}
@@ -55,6 +56,24 @@
 \RequirePackage[per-mode=symbol,inter-unit-product = \ensuremath{{}\cdot{}},mode=math]{siunitx}
 \DeclareSIPrefix\micro{\text{\textmu}}{-3} % typing SI Units, not necessary for default LMC font
 \onehalfspacing
+
+\titleformat{\chapter}
+{\fontsize{16pt}{\baselineskip}\selectfont\bfseries}
+{\thechapter}{1em}{}
+\titlespacing{\chapter}{0pt}{0pt}{\baselineskip}
+
+\titleformat{\section}
+{\fontsize{14pt}{\baselineskip}\selectfont\bfseries}
+{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\normalsize\bfseries}
+{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\normalsize\bfseries}
+{\thesubsubsection}{1em}{}
+
 \setenumerate[1]{
   itemsep=1em,partopsep=0pt,parsep=\parskip,topsep=5pt}
 \setitemize[1]{
@@ -66,12 +85,13 @@
 \setlength{\headheight}{14pt}
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \fancypagestyle{plain}{
-  \fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont ECE 445: Senior Design Laboratory}
-  \fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\MakeCapital{\RPTTYPE}}
+  \fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeCapital{\RPTTYPE}}
+  \fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\leftmark}
   \fancyfoot[C]{\thepage}}
-\fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont ECE 445: Senior Design Laboratory}
-\fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\MakeCapital{\RPTTYPE}}
+\fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeCapital{\RPTTYPE}}
+\fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\leftmark}
 \fancyfoot[C]{\thepage}
 \lstset{
   basicstyle=\small\ttfamily,

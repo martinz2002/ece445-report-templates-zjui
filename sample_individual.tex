@@ -23,27 +23,25 @@
 \individualreportcover  % coverpage for individual report used for ZJU degree appl.
 % \generalreportcover % coverpage for other reports; NEEDS \reporttype{<Type>}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
 \input{commitment_v4.tex}   % commitment statement required by individual report
 %%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Abstract}
-\addcontentsline{toc}{section}{Abstract}
+\chapter*{Abstract}
 Put your abstract here
 
 \paragraph{Keywords}
 % Put keywords below
 Keyword 1, keyword 2, keyword 3
-\clearpage
+
 %%% TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents
-\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\mainmatter
 %%% Body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcounter{page}{1}\pagenumbering{arabic}
-\section{Introduction}
-\subsection{Problem statement}
+\chapter{Introduction}
+\section{Problem statement}
 \lipsum[1]\cite{li1999,haynes1951}.
-\subsection{Importance}
+\section{Importance}
 \begin{equation}
     f\left( x \right) =\sum_{n=0}^{\infty}{\frac{1}{n!}f^{\left( n \right)}\left( x_0 \right) \left( x-x_0 \right) ^n}, x\in U\left( x_0 \right)
 \end{equation}
@@ -58,7 +56,7 @@ Keyword 1, keyword 2, keyword 3
     &=\cos x+i\sin x
     \end{aligned}
 \end{equation}
-\subsection{Literature Review}
+\section{Literature Review}
 \lipsum[2]\cite{j.a.prufrock2009,li1999,ref1}.
 
 \begin{lstlisting}[language=c]
@@ -79,7 +77,7 @@ int main(){
 }
 \end{lstlisting}
 
-\section{Methodology}
+\chapter{Methodology}
 
 Test the ability to print some units, say (in texts), \SI{10e5}{\um\ohm\degree}.
 
@@ -88,15 +86,15 @@ It also applies to equations,
     R_{t}=\SI{10e5}{\um\ohm\degree}
 \end{equation}
 
-\section{Results}
+\chapter{Results}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{figs/Picture1.png}
     \caption{An example figure.}
 \end{figure}
-\section{Discussion}
+\chapter{Discussion}
 
-\section{Conclusion}
+\chapter{Conclusion}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -106,24 +104,22 @@ It also applies to equations,
 \printbibliography[title={References},heading=bibintoc]
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %%% Appendices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{appendices}
 % All appendices here, using sections for multiple appendices
-\section{Example}
+\chapter{Example}
 An example piece of code:
 \lstinputlisting[language=python]{code/example.py}
 
-\subsection{Some Test Data}
+\section{Some Test Data}
 
-\subsection{Derivation of Square Law}
+\section{Derivation of Square Law}
 \end{appendices}
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\backmatter
 %%% Acknowledgement %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Acknowledgement}
-\addcontentsline{toc}{section}{Acknowledgement}
+\chapter*{Acknowledgement}
 Thank you thank you!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
