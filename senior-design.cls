@@ -16,7 +16,7 @@
 % This work consists of the files senior-design.cls.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{senior-design}[2023-08-02 by Martin Zhong (zhongmartin@outlook.com) Template for ZJU-UIUC Senior Design Inividual Report]
+\ProvidesClass{senior-design}[2023-12-08 by Martin Zhong (zhongmartin@outlook.com) Template for ZJUI ECE 445 Reports]
 
 \LoadClass[a4paper,11pt,oneside]{book}
 
@@ -33,12 +33,11 @@
 \RequirePackage{verbatim} % allows for verbatim text ignoring any TeX commands inside "verbatim" environment
 \RequirePackage{listings}
 \RequirePackage[dvipsnames,svgnames,table,xcdraw]{xcolor}
-\RequirePackage[ruled,hangingcomment,nofillcomment,noend]{algorithm2e}% pseudo-code support
+\RequirePackage[ruled,hangingcomment,nofillcomment,noend]{algorithm2e}% pseudo-code algorithm support
 \RequirePackage[bottom]{footmisc}
 \RequirePackage{float}
-\RequirePackage{tcolorbox}
 \RequirePackage{anyfontsize}
-\RequirePackage{csquotes}
+\RequirePackage{csquotes} % Provide displayquote
 \RequirePackage[style=ieee]{biblatex}
 \RequirePackage[title]{appendix}
 \renewcommand{\appendixname}{Appendix}
@@ -46,7 +45,8 @@
   \iffieldundef{year}
   {\bibstring{nodate}}
   {\printdate}}
-\RequirePackage[nott]{newtx}
+
+\RequirePackage{fontspec}
 \RequirePackage[scheme=plain, fontset=fandol]{ctex}\defaultfontfeatures{}
 \RequirePackage{titlesec}
 \RequirePackage{titletoc}
@@ -57,6 +57,13 @@
 \DeclareSIPrefix\micro{\text{\textmu}}{-3} % typing SI Units, not necessary for default LMC font
 \onehalfspacing
 
+% Fonts
+\setmonofont{Consolas}
+\setsansfont{Calibri}
+\RequirePackage{newtxtext}
+\RequirePackage{newtxmath}
+
+% Chapter/section/subsection title format
 \titleformat{\chapter}
 {\fontsize{16pt}{\baselineskip}\selectfont\bfseries}
 {\thechapter}{1em}{}
@@ -74,6 +81,7 @@
 {\normalsize\bfseries}
 {\thesubsubsection}{1em}{}
 
+% Enumerate list format
 \setenumerate[1]{
   itemsep=1em,partopsep=0pt,parsep=\parskip,topsep=5pt}
 \setitemize[1]{
@@ -86,6 +94,8 @@
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+% Header and footer
 \fancypagestyle{plain}{
   \fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeCapital{\RPTTYPE}}
   \fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\leftmark}
@@ -93,6 +103,8 @@
 \fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeCapital{\RPTTYPE}}
 \fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\leftmark}
 \fancyfoot[C]{\thepage}
+
+% Listings
 \lstset{
   basicstyle=\small\ttfamily,
   numbers=left,
@@ -105,6 +117,8 @@
   keywordstyle=\bfseries\color{Blue},
   frame=single
 }
+
+% New commands defined for the template
 \newcommand\reporttitle[1]{\def\RPTTITLE{#1}}
 \newcommand\reportdate[1]{\def\RPTDATE{#1}}
 \newcommand\authornames[1]{\def\AUTHORNAME{#1}}
@@ -136,21 +150,24 @@
 \def\TANAME{The name of your TA}
 \def\PROJECTNUMBER{Number of the project}
 \def\TEAMNUMBER{Number of your team}
+
+% Coverpages
 \newcommand\individualreportcover{
   \def\RPTTYPE{Senior Design Individual Report}
   \begin{titlepage}
+    \sf
     \newgeometry{left=1cm, right=1cm, top=1in, bottom=1in}
     \begin{center}
       ~~\\ % to make the vspace effective
       \vspace{1.5cm}
-      {\fontsize{16}{24}\selectfont Zhejiang University / University of Illinois Urbana-Champaign Institute}\\
+      {\fontsize{16}{24}\selectfont Zhejiang University / University of Illinois at Urbana-Champaign Institute}\\
       \vspace{1.88cm}
       {\fontsize{28}{42}\selectfont Senior Design Individual Report}\\
       \vspace{1.6cm}
       \begin{minipage}{15.92cm}
         \centering
         \fontsize{26}{26}\selectfont
-        \MakeUppercase{\bf\RPTTITLE}
+        \MakeUppercase{\textbf{\RPTTITLE}}
       \end{minipage}\\[2cm]
       {\fontsize{14}{21}\selectfont By}\\[1.5em]
       {\fontsize{16}{24}\selectfont\AUTHORNAME}
@@ -167,7 +184,6 @@
     ~
     \restoregeometry
   \end{titlepage}
-
 }
 \newcommand\generalreportcover{
   \def\RPTTYPE{\GRPTTYPE}

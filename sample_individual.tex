@@ -36,11 +36,12 @@ Keyword 1, keyword 2, keyword 3
 %%% TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \mainmatter
 %%% Body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Introduction}
 \section{Problem statement}
-\lipsum[1]\cite{li1999,haynes1951}.
+This is a sample document of this template, and here comes citation. You can cite \cite{book1,paper1} and \cite{book2}. However, putting citation at the end of a sentence is also acceptable \cite{webpage1}.
 \section{Importance}
 \begin{equation}
     f\left( x \right) =\sum_{n=0}^{\infty}{\frac{1}{n!}f^{\left( n \right)}\left( x_0 \right) \left( x-x_0 \right) ^n}, x\in U\left( x_0 \right)
@@ -57,8 +58,7 @@ Keyword 1, keyword 2, keyword 3
     \end{aligned}
 \end{equation}
 \section{Literature Review}
-\lipsum[2]\cite{j.a.prufrock2009,li1999,ref1}.
-
+This is a sample listing.
 \begin{lstlisting}[language=c]
 #include<stdio.h>
 void fuzzy(int x){
@@ -79,7 +79,7 @@ int main(){
 
 \chapter{Methodology}
 
-Test the ability to print some units, say (in texts), \SI{10e5}{\um\ohm\degree}.
+Test the ability\footnote{This is an example footnote.} to print some units, say (in texts), \SI{10e5}{\um\ohm\degree}.
 
 It also applies to equations,
 \begin{equation}
