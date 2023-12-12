@@ -39,7 +39,7 @@
 \RequirePackage{anyfontsize}
 \RequirePackage{csquotes} % Provide displayquote
 \RequirePackage[style=ieee]{biblatex}
-\RequirePackage[title]{appendix}
+\RequirePackage[titletoc]{appendix}
 \renewcommand{\appendixname}{Appendix}
 \renewbibmacro*{date}{%
   \iffieldundef{year}
@@ -57,11 +57,10 @@
 \DeclareSIPrefix\micro{\text{\textmu}}{-3} % typing SI Units, not necessary for default LMC font
 \onehalfspacing
 
-% Fonts
-\setmonofont{Consolas}
-\setsansfont{Arial}
-\RequirePackage{newtxtext}
-\RequirePackage{newtxmath}
+% Font settings
+\renewcommand*{\UrlFont}{\rmfamily}
+\newfontfamily{\cambria}{Cambria}
+\newfontfamily{\calibri}{Calibri}
 
 % Chapter/section/subsection title format
 \titleformat{\chapter}
@@ -106,7 +105,7 @@
 
 % Listings
 \lstset{
-  basicstyle=\fontsize{10pt}{1em}\selectfont\ttfamily,
+  basicstyle=\ttfamily,
   numbers=left,
   numberstyle=\scriptsize,
   tabsize=4,
@@ -114,8 +113,7 @@
   columns=fixed,
   keepspaces,
   commentstyle=\itshape\color{ForestGreen},
-  keywordstyle=\bfseries\color{Blue},
-  frame=single
+  keywordstyle=\bfseries\color{Blue}
 }
 
 % New commands defined for the template
@@ -155,7 +153,7 @@
 \newcommand\individualreportcover{
   \def\RPTTYPE{Senior Design Individual Report}
   \begin{titlepage}
-    \sf
+    \calibri
     \newgeometry{left=1cm, right=1cm, top=1in, bottom=1in}
     \begin{center}
       ~~\\ % to make the vspace effective
@@ -167,7 +165,7 @@
       \begin{minipage}{15.92cm}
         \centering
         \fontsize{26}{26}\selectfont
-        \MakeUppercase{\textbf{\RPTTITLE}}
+        \MakeUppercase{\cambria\RPTTITLE}
       \end{minipage}\\[2cm]
       {\fontsize{14}{21}\selectfont By}\\[1.5em]
       {\fontsize{16}{24}\selectfont\AUTHORNAME}

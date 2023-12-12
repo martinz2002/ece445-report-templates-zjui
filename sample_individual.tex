@@ -1,8 +1,12 @@
 \documentclass{senior-design}
 
+%%% Fonts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setmonofont[Scale=MatchLowercase]{Consolas}
+\setsansfont{Calibri}
+\RequirePackage{newtxtext, newtxmath}   % Font Times
+
 %%% Report information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \reporttitle{An Awesome Project Made By An Amazing Student}
-% \reporttype{Some types} % Uncomment this line if you want to use \generalreportcover
 \semester{Spring 2023}
 \sponsor{Prof. \name{Tom}{Jerry}}
 \ta{\name{Black}{Shout}}
@@ -20,20 +24,40 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-\setcounter{page}{1}\pagenumbering{roman}
-%%% TITLE PAGE: select the one you need %%%%%%%%%%%%%%%%%%%%%%%%%
-\individualreportcover  % coverpage for individual report used for ZJU degree appl.
-% \generalreportcover % coverpage for other reports; NEEDS \reporttype{<Type>}
+%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%%%%%%%
+\individualreportcover  % cover-page for individual report used for ZJU degree appl.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \frontmatter
 \input{commitment_v4.tex}   % commitment statement required by individual report
+
+%%% Acknowledgement %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Acknowledgement}
+Writing an acknowledgment section is a way to express your gratitude to individuals and organizations that have contributed to your project. Below are some tips on how to write an acknowledgment section:
+
+Begin your acknowledgment section by expressing your gratitude to the individuals or organizations that have helped you with your project. This can include your faculty advisor, project sponsor, team members, family members, and friends.
+
+Be specific about the contributions that each person or organization has made to your project. This can include providing technical guidance, financial support, or emotional support.
+It's important to keep your acknowledgment section concise. Try to limit your acknowledgments to one page or less.
+Keep in mind that your acknowledgment section is part of a formal report, so please use a professional tone and avoid overly casual language.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter*{Abstract}
-Put your abstract here
+The abstract is short (150 words or less) and provides enough of a summary of the report for the reader to decide whether to read the entire document. State very concisely what your device or system does, and the main findings and results of your project. Save background information (e.g., motivation, competitors) for the introduction and design details for the body of the report. Do not give an advertising pitch. Note that the abstract does not appear in the table of contents. (This is achieved by using \verb|\chapter*| command instead of \verb|\chapter|.)
+
+Note that you can ignore the TOC because it is generated automatically by \verb|\tableofcontents| below. Work on the body of the report, then compile the project using the following commands:
+\begin{lstlisting}
+xelatex sample_individual.tex
+biber sample_individual
+xelatex sample_individual.tex
+xelatex sample_individual.tex
+\end{lstlisting}
 
 \paragraph{Keywords}
 % Put keywords below
 Keyword 1, keyword 2, keyword 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents
@@ -42,24 +66,28 @@ Keyword 1, keyword 2, keyword 3
 \mainmatter
 %%% Body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Introduction}
-\section{Problem statement}
-This is a sample document of this template, and here comes citation. You can cite \cite{book1,paper1} and \cite{book2}. However, putting citation at the end of a sentence is also acceptable \cite{webpage1}.
-\section{Importance}
+Briefly describe the science or engineering problem to be addressed in the report, as well as the purpose and usefulness of the device or system you have built. Summarize the contents of the upcoming chapters as well as the main conclusions of your project, to be elaborated in the last chapter.
+
+\section{Sample citation using IEEE}
+Here comes the citation. You can cite by using \verb|\cite| which produces \cite{book1,paper1}, or by \verb|\textcite| which produces \textcite{book2}. However, putting a citation at the end of a sentence is also acceptable \cite{webpage1}.
+
+\section{Sample equations}
 \begin{equation}
-    f\left( x \right) =\sum_{n=0}^{\infty}{\frac{1}{n!}f^{\left( n \right)}\left( x_0 \right) \left( x-x_0 \right) ^n}, x\in U\left( x_0 \right)
+    EQI = \sum_{i=1}^{n}W_j * r_{ij}
 \end{equation}
+
+\begin{equation}
+    EHI = L_1 \times ESI + L_2 \times EQI
+\end{equation}
+
 \begin{equation}
     \begin{aligned}
-        e^{ix} & =1+ix+\frac{1}{2!}\left( ix \right) ^2+\frac{1}{3!}\left( ix \right) ^3+\cdots \frac{1}{n!}\left( ix \right) ^n+\cdots
-        \\
-               & =1+ix-\frac{1}{2!}x^2-i\frac{1}{3!}x^3+\frac{1}{4!}x^4+i\frac{1}{5!}x^5-\cdots
-        \\
-               & =\left( 1-\frac{1}{2!}x^2+\frac{1}{4!}x^4-\cdots \right) +i\left( x-\frac{1}{3!}x^3+\frac{1}{5!}x^5-\cdots \right)
-        \\
-               & =\cos x+i\sin x
+        EE / EHI = \beta_0 & + \beta_1 PCG + \beta_2 RGP + \cdots + \beta_i X_i +              \\
+        \cdots             & + \beta_9 ICWUR + \beta_{10} ECPG + \beta_11 WCPG + \varepsilon_i
     \end{aligned}
 \end{equation}
-\section{Literature Review}
+
+\section{Sample listings}
 This is a sample listing.
 \begin{lstlisting}[language=c]
 #include<stdio.h>
@@ -79,25 +107,51 @@ int main(){
 }
 \end{lstlisting}
 
-\chapter{Methodology}
+\chapter{Design}
+Discuss general design alternatives. Give equations, simulations, and general circuits. Describe the design in detail, addressing each major component. Include schematics with components, drawings, flowcharts, etc. Some teams may wish to split this chapter in two: 2. Design Procedure, and 3. Design Details. This \LaTeX~template will automatically update numbering systems for chapters, sections, figures, tables, etc., yet you should still always keep track of them as you develop and revise the text.
 
-Test the ability\footnote{This is an example footnote.} to print some units, say (in texts), \SI{10e5}{\um\ohm\degree}.
+\section{Typesetting SI Units}
+This template allows you to typeset SI units in a standard format. The units should be typed like this: \SI{10e5}{\um\ohm\degree}.
 
 It also applies to equations,
 \begin{equation}
-    R_{t}=\SI{10e5}{\um\ohm\degree}
+    X_{t}=\SI{10e5}{\um\ohm\degree}
 \end{equation}
 
-\chapter{Results}
+Visit \url{https://www.ctan.org/pkg/siunitx} for more details about package \texttt{siunitx}.
+
+\chapter{Design Verification}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{figs/Picture1.png}
     \caption{An example figure.}
 \end{figure}
+
 \chapter{Discussion}
 
-\chapter{Conclusion}
+\section{A sample of table}
+\begin{table}[H]
+    \centering
+    \caption{Example of a Table and Its Title}
+    \label{tab:eg-table}
+    \begin{tabular}{@{}c|cc@{}}
+        \toprule
+        Part                & Electricity  & Magnetism \\ \midrule
+        Field intensity     & $E$          & $H$       \\
+        Flux density        & $D$          & $B$       \\
+        Constitutive factor & $\epsilon^b$ & $\mu$     \\ \bottomrule
+    \end{tabular}
+\end{table}
 
+\section{An example of inserting code listings}
+An example piece of inserting code from an existing file:
+\lstinputlisting[language=python]{code/example.py}
+
+\chapter{Conclusion}
+\section{Accomplishments}
+\section{Uncertainties}
+\section{Ethical Considerations}
+\section{Future Work}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -106,22 +160,40 @@ It also applies to equations,
 \printbibliography[title={References},heading=bibintoc]
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%% Appendices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{appendices}
     % All appendices here, using sections for multiple appendices
-    \chapter{Example}
-    An example piece of code:
-    \lstinputlisting[language=python]{code/example.py}
+    \chapter{Requirement and Verification Table}
+    An appendix is a good place for the Requirement and Verification Table from your design review. Below is a starter table. Including these details here will help to avoid lengthy and tedious narrative descriptions in the main text, which may not be of immediate interest to your imagined audience of company managers and professionals. Any requirement that is not verified should be explained either in the main text or the appendix. Note that both the pagination and the numbering of figures, tables, and equations continue from the main text to the appendices.
+
+    Tab. \ref{tab:srv} is generated by Excel2LaTeX. See \url{https://www.ctan.org/tex-archive/support/excel2latex/} for more details.
+    % Table generated by Excel2LaTeX from sheet 'Sheet1'
+    \begin{table}[htbp]
+        \centering
+        \caption{System Requirements and Verifications}
+        \begin{tabularx}{\textwidth}{X|X|c}
+            \toprule
+            \centering\multirow{2}[2]{*}{Requirement} & \centering\multirow{2}[2]{*}{Verification} & \multicolumn{1}{c}{Verification status} \\
+            \multicolumn{1}{c|}{}                     & \multicolumn{1}{c|}{}                      & \multicolumn{1}{c}{(Y or N)}                     \\
+            \midrule
+            1. Requirement                            & 1. Verification                            & \multirow{4}[1]{*}{}                             \\
+            a. Subrequirement                         & a. Subverification                         &                                                  \\
+            b. Subrequirement                         & b. Subverification                         &                                                  \\
+            c. Subrequirement                         & c. Subverification                         &                                                  \\\hline
+            2. Requirement                            & 2. Verification                            & \multirow{4}[0]{*}{}                             \\
+            a. Subrequirement                         & a. Subverification                         &                                                  \\
+            b. Subrequirement                         & b. Subverification                         &                                                  \\
+            c. Subrequirement                         & c. Subverification                         &                                                  \\\hline
+            3.                                        & 3.                                         &                                                  \\\hline
+            4.                                        & 4.                                         &                                                  \\\bottomrule
+        \end{tabularx}%
+        \label{tab:srv}%
+    \end{table}%
 
     \section{Some Test Data}
-
-    \section{Derivation of Square Law}
 \end{appendices}
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \backmatter
-%%% Acknowledgement %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter*{Acknowledgement}
-Thank you thank you!
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
