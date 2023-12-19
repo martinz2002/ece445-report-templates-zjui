@@ -136,18 +136,15 @@
 {#3}%Student ID
 }
 \newcommand\name[2]{#1~\textsc{#2}}
-\def\RPTTYPE{Type of the report}
-\def\ABSTRACTCONTENT{You did not specify the content of abstract.}
-\def\ACKNOWLEDGEMENTCONTENT{You did not specify the content of acknowledgement.}
-\def\KEYWORDS{Keywords of the project}
-\def\RPTTITLE{Put your title here}
-\def\RPTDATE{Put the date of the report here}
-\def\AUTHORNAME{Your teammembers, or the author of the individual reports}
-\def\SEMESTER{The semester where you write the report for}
-\def\FACULTYNAME{The teacher who sponsor/directs you}
-\def\TANAME{The name of your TA}
-\def\PROJECTNUMBER{Number of the project}
-\def\TEAMNUMBER{Number of your team}
+\def\RPTTYPE{~}
+\def\RPTTITLE{~}
+\def\RPTDATE{~}
+\def\AUTHORNAME{~}
+\def\SEMESTER{~}
+\def\FACULTYNAME{~}
+\def\TANAME{~}
+\def\PROJECTNUMBER{~}
+\def\TEAMNUMBER{~}
 
 % Coverpages
 \newcommand\individualreportcover{
