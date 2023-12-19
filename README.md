@@ -8,11 +8,13 @@ ZJUI毕业设计课程所有报告【包含毕设个人报告（i.e. 毕设论�
 
 `senior-design.cls`按LPPL许可证进行分发。
 
+## 字体Prerequisite
+需要安装有Calibri、Cambria、Arial、Consolas字体。
+
 ## 用法
 本模板基于`book`类编写，默认使用A4尺寸、11磅字，页边距2.54cm（约1英寸）。
 
-
-### 新命令
+### 模板命令
 
 **本仓库根目录下的`sample_*.tex`提供了一些开箱即用的样本，用户可以根据需要填写、删除信息并编译。**
 
@@ -46,9 +48,9 @@ ZJUI毕业设计课程所有报告【包含毕设个人报告（i.e. 毕设论�
 
 #### 封面生成类
 
-`\individualreportcover`将生成一个个人毕业设计报告的封面。个人毕业设计报告（Senior Design Individual Report）用于ZJU-UIUC联合学院本科生申请浙江大学学位。
+`\individualreportcover`将生成一个个人毕业设计报告的封面。
 
-`\generalreportcover`将生成一个通用的封面（例如Individual Progress Report，或Final Report）。通用封面包含报告的类型（例如Individual Progress Report）和标题（填写项目名称）。
+`\generalreportcover`将依据\reporttype{}指定的报告类型生成一个通用的封面，封面上印有报告的类型。
 
 ### 文献管理
 本模板的引文插入依赖`biblatex`宏包，可自动生成IEEE格式引文。推荐使用开源文献管理工具Zotero（ https://zotero.org/ ）配合其附加组件BetterBibTeX（ https://github.com/retorquere/zotero-better-bibtex ）进行文件管理。BetterBibTeX允许用户将文献库中的条目导出为biblatex的参考文献文件，并可设置自动更新。在导言区使用`\addbibresource{<FileName>}`命令即可指定文档所使用的`biblatex`数据库文件。
