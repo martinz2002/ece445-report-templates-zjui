@@ -98,7 +98,28 @@
 \fancypagestyle{plain}{
   \fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeCapital{\RPTTYPE}}
   \fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\leftmark}
-  \fancyfoot[C]{\thepage}}
+  \fancyfoot[C]{\thepage}
+}
+\fancypagestyle{toc}{
+  \fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeCapital{\RPTTYPE}}
+  \fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont Contents}
+  \fancyfoot[C]{\thepage}
+}
+\fancypagestyle{acknowledgement}{
+  \fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeCapital{\RPTTYPE}}
+  \fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont Acknolwedgement}
+  \fancyfoot[C]{\thepage}
+}
+\fancypagestyle{abstract}{
+  \fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeCapital{\RPTTYPE}}
+  \fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont Abstract}
+  \fancyfoot[C]{\thepage}
+}
+\fancypagestyle{references}{
+  \fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeCapital{\RPTTYPE}}
+  \fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont References}
+  \fancyfoot[C]{\thepage}
+}
 \fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeCapital{\RPTTYPE}}
 \fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\leftmark}
 \fancyfoot[C]{\thepage}

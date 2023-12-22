@@ -38,7 +38,7 @@
 \frontmatter
 
 %%% Acknowledgement %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter*{Acknowledgement}
+\chapter*{Acknowledgement}\thispagestyle{acknowledgement}
 Writing an acknowledgment section is a way to express your gratitude to individuals and organizations that have contributed to your project. Below are some tips on how to write an acknowledgment section:
 
 Begin your acknowledgment section by expressing your gratitude to the individuals or organizations that have helped you with your project. This can include your faculty advisor, project sponsor, team members, family members, and friends.
@@ -50,7 +50,7 @@ Keep in mind that your acknowledgment section is part of a formal report, so ple
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter*{Abstract}
+\chapter*{Abstract}\thispagestyle{abstract}
 The abstract is short (150 words or less) and provides enough of a summary of the report for the reader to decide whether to read the entire document. State very concisely what your device or system does, and the main findings and results of your project. Save background information (e.g., motivation, competitors) for the introduction and design details for the body of the report. Do not give an advertising pitch. Note that the abstract does not appear in the table of contents. (This is achieved by using \verb|\chapter*| command instead of \verb|\chapter|.)
 
 Note that you can ignore the TOC because it is generated automatically by \verb|\tableofcontents| below. Work on the body of the report, then compile the project using the following commands:
@@ -67,7 +67,7 @@ Keyword 1, keyword 2, keyword 3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\tableofcontents
+\tableofcontents\thispagestyle{toc}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \mainmatter
@@ -165,6 +165,7 @@ An example piece of inserting code from an existing file:
 \clearpage
 \renewcommand*{\UrlFont}{\rmfamily}
 \printbibliography[title={References},heading=bibintoc]
+\thispagestyle{references}
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
