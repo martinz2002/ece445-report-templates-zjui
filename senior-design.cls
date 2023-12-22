@@ -53,6 +53,7 @@
 \RequirePackage{hyperref}
 \RequirePackage{xurl}
 \RequirePackage{setspace}
+\RequirePackage{afterpage}
 \RequirePackage[per-mode=symbol,inter-unit-product = \ensuremath{{}\cdot{}},mode=math]{siunitx}
 \DeclareSIPrefix\micro{\text{\textmu}}{-3} % typing SI Units, not necessary for default LMC font
 \onehalfspacing
@@ -167,6 +168,13 @@
 \def\TANAME{~}
 \def\PROJECTNUMBER{~}
 \def\TEAMNUMBER{~}
+
+\newcommand\addemptypage{
+  \null
+  \thispagestyle{empty}
+  \addtocounter{page}{-1}
+  \newpage
+}
 
 % Coverpages
 \newcommand\individualreportcover{
