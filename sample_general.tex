@@ -171,15 +171,11 @@ An example piece of inserting code from an existing file:
 \section{Future Work}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\clearpage
-\renewcommand*{\UrlFont}{\rmfamily}
-\printbibliography[title={References},heading=bibintoc]
-\thispagestyle{references}
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %%% Appendices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\titleformat{\chapter}
+{\fontsize{16pt}{\baselineskip}\selectfont\bfseries}
+{Appendix \thechapter}{1em}{}
+\titlespacing{\chapter}{0pt}{0pt}{\baselineskip}
 \begin{appendices}
     % All appendices here, using sections for multiple appendices
     \chapter{Requirement and Verification Table}
@@ -211,7 +207,18 @@ An example piece of inserting code from an existing file:
 
     \section{Some Test Data}
 \end{appendices}
+\titleformat{\chapter}
+{\fontsize{16pt}{\baselineskip}\selectfont\bfseries}
+{\thechapter}{1em}{}
+\titlespacing{\chapter}{0pt}{0pt}{\baselineskip}
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \backmatter
+%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\renewcommand*{\UrlFont}{\rmfamily}
+\printbibliography[title={References},heading=bibintoc]
+\thispagestyle{references}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
