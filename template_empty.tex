@@ -1,0 +1,102 @@
+\documentclass{senior-design}
+
+%%% Watermark %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[scale=1,
+            % final, % uncomment this line to disable the watermark
+            text=SAMPLE]{draftwatermark}
+
+%%% Fonts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setmonofont[Scale=MatchLowercase]{Consolas}
+\setsansfont{Arial}
+\usepackage{newpxtext, newpxmath} % Palatino
+
+%%% Report information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\reporttitle{Report Title Here}
+\reporttype{Report Type Here (IPR, Final Report, Proposal, ...)} % Uncomment this line if you want to use \generalreportcover
+\semester{}
+\sponsor{Prof. \name{First}{Last}}
+\ta{\name{First}{Last}}
+\reportdate{\today}
+\authornames{
+    \nameemail{First}{Last}{email@email.email}\\[1em]
+    \nameemail{First}{Last}{email@email.email}\\[1em]
+    \nameemail{First}{Last}{email@email.email}\\[1em]
+    \nameemail{First}{Last}{email@email.email}
+}
+\addbibresource{references.bib} % The bib database
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Uncomment the lines you need according to the type of report:
+\projectnumber{114}
+\teamnumber{514}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%%% TITLE PAGE: select the one you need and comment the other %%%
+\individualreportcover % coverpage for individual reports
+\generalreportcover % coverpage for other reports; NEEDS \reporttype{<Type>}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addemptypage
+\frontmatter
+
+%%% Acknowledgement %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Acknowledgement}\thispagestyle{acknowledgement}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Abstract}\thispagestyle{abstract}
+
+\paragraph{Keywords}
+% Put keywords below
+Keyword 1, keyword 2, keyword 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents\thispagestyle{toc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter
+%%% Body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+
+\chapter{Design}
+
+\chapter{Design Verification}
+
+\chapter{Discussion}
+
+\chapter{Conclusion}
+\section{Accomplishments}
+\section{Uncertainties}
+\section{Ethical Considerations}
+\section{Future Work}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\titleformat{\chapter}
+{\fontsize{16pt}{\baselineskip}\selectfont\bfseries}
+{Appendix \thechapter}{1em}{}
+\titlespacing{\chapter}{0pt}{0pt}{\baselineskip}
+
+%%% Appendices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{appendices}
+    % All appendices here, using sections for multiple appendices
+    \chapter{Requirement and Verification Table}
+    
+\end{appendices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\chapter}
+{\fontsize{16pt}{\baselineskip}\selectfont\bfseries}
+{\thechapter}{1em}{}
+\titlespacing{\chapter}{0pt}{0pt}{\baselineskip}
+\clearpage
+\backmatter
+%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\renewcommand*{\UrlFont}{\rmfamily}
+\printbibliography[title={References},heading=bibintoc]
+\thispagestyle{references}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
