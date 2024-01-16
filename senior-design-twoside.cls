@@ -1,5 +1,5 @@
-%% senior-design.cls
-%% Copyright 2024 Tiantian Zhong
+%% senior-design-twoside.cls
+%% Copyright 2023 Tiantian Zhong
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
@@ -17,9 +17,9 @@
 % senior-design-twoside.cls.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{senior-design}[2024-01-17 by Martin Zhong (zhongmartin@outlook.com) Template for ZJUI ECE 445 Reports]
+\ProvidesClass{senior-design-twoside}[2024-01-17 by Martin Zhong (zhongmartin@outlook.com) Template for ZJUI ECE 445 Reports]
 
-\LoadClass[a4paper,11pt,oneside]{book}
+\LoadClass[a4paper,11pt,twoside]{book}
 
 \RequirePackage{booktabs}
 \RequirePackage{tabularx}
@@ -97,15 +97,15 @@
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \pagestyle{fancy}\fancyhf{}
-\fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase{\RPTTYPE~(\SEMESTER)}}
-\fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase\leftmark}
-\fancyfoot[C]{\fontsize{9pt}{\baselineskip}\selectfont\thepage}
+\fancyhead[LO, RE]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase{\RPTTYPE~(\SEMESTER)}}
+\fancyhead[RO, LE]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase\leftmark}
+\fancyfoot[RO, LE]{\fontsize{9pt}{\baselineskip}\selectfont\thepage}
 
 % Header and footer
 \fancypagestyle{plain}{
-  \fancyhead[L]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase{\RPTTYPE~(\SEMESTER)}}
-  \fancyhead[R]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase\leftmark}
-  \fancyfoot[C]{\fontsize{9pt}{\baselineskip}\selectfont\thepage}
+  \fancyhead[LO, RE]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase{\RPTTYPE~(\SEMESTER)}}
+  \fancyhead[RO, LE]{\fontsize{9pt}{\baselineskip}\selectfont\MakeUppercase\leftmark}
+  \fancyfoot[RO, LE]{\fontsize{9pt}{\baselineskip}\selectfont\thepage}
 }
 
 % Listings
@@ -193,6 +193,7 @@
     ~
     \restoregeometry
   \end{titlepage}
+  \clearpage\thispagestyle{empty}
 }
 \newcommand\generalreportcover{
   \def\RPTTYPE{\GRPTTYPE}
@@ -219,4 +220,5 @@
     \vfill
     {\large \RPTDATE} % Date
   \end{titlepage}
+  \clearpage\thispagestyle{empty}
 }

@@ -1,10 +1,5 @@
 \documentclass{senior-design}
 
-%%% Watermark %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[scale=1,
-            % final, % uncomment this line to disable the watermark
-            text=SAMPLE]{draftwatermark}
-
 %%% Fonts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setmonofont[Scale=MatchLowercase]{Consolas}
 \setsansfont{Arial}
@@ -23,23 +18,18 @@
     \nameemail{Dawu}{Wang}{dawu@example.com}\\[1em]
     \nameemail{English}{Member}{englishm0@illinois.edu}
 }
-\addbibresource{references.bib} % The bib database
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%% Uncomment the lines you need according to the type of report:
 \projectnumber{114}
 \teamnumber{514}
+\addbibresource{references.bib} % The bib database
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}
-%%% TITLE PAGE: select the one you need %%%%%%%%%%%%%%%%%%%%%%%%%
+%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \generalreportcover % coverpage for other reports; NEEDS \reporttype{<Type>}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\addemptypage
 \frontmatter
 
 %%% Acknowledgement %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter*{Acknowledgement}\thispagestyle{acknowledgement}
+\chapter{Acknowledgement}
 Writing an acknowledgment section is a way to express your gratitude to individuals and organizations that have contributed to your project. Below are some tips on how to write an acknowledgment section:
 
 Begin your acknowledgment section by expressing your gratitude to the individuals or organizations that have helped you with your project. This can include your faculty advisor, project sponsor, team members, family members, and friends.
@@ -51,7 +41,7 @@ Keep in mind that your acknowledgment section is part of a formal report, so ple
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter*{Abstract}\thispagestyle{abstract}
+\chapter{Abstract}
 The abstract is short (150 words or less) and provides enough of a summary of the report for the reader to decide whether to read the entire document. State very concisely what your device or system does, and the main findings and results of your project. Save background information (e.g., motivation, competitors) for the introduction and design details for the body of the report. Do not give an advertising pitch. Note that the abstract does not appear in the table of contents. (This is achieved by using \verb|\chapter*| command instead of \verb|\chapter|.)
 
 Note that you can ignore the TOC because it is generated automatically by \verb|\tableofcontents| below. Work on the body of the report, then compile the project using the following commands:
@@ -68,7 +58,7 @@ Keyword 1, keyword 2, keyword 3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\tableofcontents\thispagestyle{toc}
+\tableofcontents
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \mainmatter
@@ -218,7 +208,6 @@ An example piece of inserting code from an existing file:
 \clearpage
 \renewcommand*{\UrlFont}{\rmfamily}
 \printbibliography[title={References},heading=bibintoc]
-\thispagestyle{references}
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}

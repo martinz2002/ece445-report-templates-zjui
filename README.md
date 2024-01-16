@@ -4,15 +4,19 @@ ZJUI毕业设计课程所有报告【包含毕设个人报告（i.e. 毕设论�
 
 基于[UIUC ECE445 Template](https://courses.grainger.illinois.edu/ece445zjui/documents/445_template.zip)和毕业设计个人报告要求（见BB）制作。
 
+本模板包含两个类：
+- `senior-design.cls`为普通排版类型，只保证每一章节另起新页。
+- `senior-design-twoside.cls`专为印刷设计，与`senior-design.cls`的唯一区别为前者保证每一章节另起新页且只在奇数页（书本摊开后的右侧页）开始。
+
 ## 许可
 
-`senior-design.cls`按LPPL许可证进行分发。
+`senior-design.cls`和`senior-design-twoside.cls`按LPPL许可证进行分发。
 
 ## 字体Prerequisite
 需要安装有Calibri、Cambria、Arial、Consolas字体。
 
 ## 用法
-本模板基于`book`类编写，默认使用A4尺寸、11磅字，页边距2.54cm（约1英寸）。
+本模板基于`book`类编写，使用A4尺寸、11磅字，页边距2.54cm（约1英寸）。
 
 ### 模板命令
 
