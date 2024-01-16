@@ -8,6 +8,8 @@ ZJUI毕业设计课程所有报告【包含毕设个人报告（i.e. 毕设论�
 - `senior-design.cls`为普通排版类型，只保证每一章节另起新页。
 - `senior-design-twoside.cls`专为印刷设计，与`senior-design.cls`的唯一区别为前者保证每一章节另起新页且只在奇数页（书本摊开后的右侧页）开始。
 
+**建议所有需要纸质印刷的报告（例如个人毕设论文）使用`senior-design-twoside.cls`，其他仅需网上提交、无需打印的报告使用`senior-design.cls`。**
+
 ## 许可
 
 `senior-design.cls`和`senior-design-twoside.cls`按LPPL许可证进行分发。
